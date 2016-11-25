@@ -496,7 +496,7 @@
 ;;---------------------------------------------------------
 
 (deftemplate recomendacion
-     (slot obra)
+     (slot Obras+de+arte)
      (slot prioridad))
 
 
@@ -604,21 +604,21 @@
 (deffunction incrementa-prioridad-obras (?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?obra (fact-slot-value ?f obra))
-      (if (eq (send ?obra (sym-cat get- ?slot)) ?valor) then 
+      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
+      (if (eq (send ?Obras+de+arte (sym-cat get- ?slot)) ?valor) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
 ;;-------------------------------------------------------------
-;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; Incrementa el prioridad de todas las recomandaciones cuyo Obras+de+arte
 ;; tiene el multislot ?slot con valor igual que ?valor
 ;; El incremento de prioridad será de ?inc
 ;;-------------------------------------------------------------
 (deffunction incrementa-prioridad-obras-lista (?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?obra (fact-slot-value ?f obra))
-      (if (member ?valor (send ?obra (sym-cat get- ?slot))) then 
+      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
+      (if (member ?valor (send ?Obras+de+arte (sym-cat get- ?slot))) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
@@ -631,10 +631,10 @@
 (deffunction incrementa-prioridad-obras-epoca (?epoca ?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?obra (fact-slot-value ?f obra))
+      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
       (if (and
-        (eq (send ?obra get-epoca) ?epoca)
-        (eq (send ?obra (sym-cat get- ?slot)) ?valor)) then 
+        (eq (send ?Obras+de+arte get-epoca) ?epoca)
+        (eq (send ?Obras+de+arte (sym-cat get- ?slot)) ?valor)) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
@@ -681,9 +681,9 @@
 ;;-----------------------------------------------------------------------------------------
 (defrule init-recomendaciones
   (declare (salience 1))
-  ?obra <- (object (is-a Obras+de+arte))
+  ?Obras+de+arte <- (object (is-a Obras+de+arte))
   =>
-  (assert (recomendacion (obra ?obra) (prioridad 0))))
+  (assert (recomendacion (Obras+de+arte ?Obras+de+arte) (prioridad 0))))
 
 
 ;; Pasar al modulo de seleccion de epoca
@@ -700,7 +700,6 @@
 ;;---------------------------------------------------------------------------------
 ;;
 ;; Aqui empezamos con el modulo de para determinar la epoca del usuario 
-;; 
 ;;
 ;;---------------------------------------------------------------------------------
 
@@ -708,26 +707,140 @@
   (import MAIN ?ALL)
   (export ?ALL))
 
-
-;; Determinar la epoca preferida del usuario
-;; Seleccionar una epoca hace que las puntuaciones 
 ;;---------------------------------------------
-(defrule pregunta-epoca "¿Qué epoca prefieres? Arte clásico, Medieval, Moderno, Contemporáneo"
+;; Determinar la epoca preferida del usuario
+;;---------------------------------------------
+
+(defrule pregunta-epoca "¿Qué epoca prefieres? Contemporáneo, Medieval, Moderno, Ninguna"
   (declare (salience 5))
   ?t <- (epoca (nombre desconocida))
   =>
   (bind ?response
-    (ask-question "¿Qué epoca prefieres?%n  1 - Arte clásico%n  2 - Medieval%n  3 - Moderno%n  4 - Contemporáneo"
+    (ask-question "¿Qué epoca prefieres?%n  1 - Contemporáneo%n  2 - Medieval%n  3 - Moderno%n  4 - Ninguna"
                   1 2 3 4))
   (if (eq ?response 1) 
-    then (modify ?t (nombre Arte-clasico))
-         (incrementa-prioridad-obras epoca Arte-clasico 1000))
+    then (modify ?t (nombre Contemporaneo))
+         (incrementa-prioridad-obras epoca Contemporaneo 1000))
   (if (eq ?response 2) 
     then (modify ?t (nombre Medieval))
          (incrementa-prioridad-obras epoca Medieval 1000))
   (if (eq ?response 3) 
     then (modify ?t (nombre Moderno))
-         (incrementa-prioridad-obras epoca Moderno 1000))
-  (if (eq ?response 4) 
-    then (modify ?t (nombre Contemporaneo))
-         (incrementa-prioridad-obras epoca Contemporaneo 1000)))
+         (incrementa-prioridad-obras epoca Moderno 1000)))
+
+
+;; Saltar al modulo edad
+;;----------------------
+(defrule fin-determina-epoca "Fin pregunta eleccion epoca"
+  (declare (salience 0))
+  =>
+  (focus preguntas-grupo))
+
+
+;;---------------------------------------------------------------------------------
+;;
+;; Preguntas Grupo o Solo
+;;
+;;---------------------------------------------------------------------------------
+
+;; Definicion del modulo
+;;----------------------
+(defmodule preguntas-grupo "Preguntas para determinar si es un grupo"
+  (import determina-epoca ?ALL)
+  (export ?ALL))
+
+;;---------------------------------------------
+;; Determinar si va en grupo o en solitario
+;;---------------------------------------------
+
+(defrule pregunta-grupo "Preguntas para determinar si viene solo o acompañado"
+  (declare (salience 10))
+  =>
+  (if (si-o-no-p "¿Vas a venir solo? (s/n)")
+    then (assert (grupo-o-solo solo))
+    else (assert (grupo-o-solo grupo))))
+
+;; Saltar al modulo autores
+;;--------------------------------------------------
+(defrule fin-preguntas-grupo "Fin preguntas grupo"
+  (declare (salience 0))
+  =>
+  (focus preguntas-autor))
+
+
+;;---------------------------------------------------------------------------------
+;;
+;; Preguntas Autores
+;;
+;;---------------------------------------------------------------------------------
+
+(defmodule preguntas-autor "Preguntas para determinar que autor le gusta más o ninguno"
+  (import preguntas-grupo ?ALL)
+  (export ?ALL))
+
+
+
+;;---------------------------------------------
+;; Determinar si tiene algun autor preferido
+;;---------------------------------------------
+
+(defrule pregunta-autor
+  (declare (salience 10))
+  =>
+  (bind ?response
+    (ask-question "¿Cuál de estos autores prefieres?%n1 - Velázquez%n2 - Caravaggio%n3 - Goya%n4 - Ninguno%n"
+                  1 2 3 4))
+    (if (eq ?response 1) then (assert (autor Velazquez)))
+    (if (eq ?response 2) then (assert (autor Caravaggio)))
+    (if (eq ?response 3) then (assert (autor Goya))))
+
+;; Fin preguntas Autores
+;;-----------------------------------
+(defrule fin-preguntas-autor "Fin preguntas específicas de epoca"
+  (declare (salience 0))
+  =>
+  (focus preguntas-conocimiento-arte))
+
+
+;---------------------------------------------------------------------------------
+;;
+;; Preguntas Conocimientos de arte
+;;
+;;---------------------------------------------------------------------------------
+
+(defmodule preguntas-conocimiento-arte "Preguntas para determinar que  tanto sabe de arte"
+  (import preguntas-autor ?ALL)
+  (export ?ALL))
+
+;;------------------------------------------------
+;; Determinar el conocimiento que tiene sobre arte
+;;------------------------------------------------
+
+(defrule pregunta-conocimiento-arte
+  (declare (salience 10))
+  =>
+  (bind ?response
+    (ask-question "¿Que conocimientos tienes de arte?%n1 - Nada%n2 - Conozco algunas obras pero no muchas%n3 - Soy todo un experto%n"
+                  1 2 3))
+    (if (eq ?response 1) then (assert (conocimiento-arte Nada)))
+    (if (eq ?response 2) then (assert (conocimiento-arte Normal)))
+    (if (eq ?response 3) then (assert (conocimiento-arte Experto))))
+
+;; Fin preguntas conocimiento de arte
+;;-----------------------------------
+
+(defrule fin-preguntas-conocimiento-arte "Pasa a imprimir las recomendaciones"
+  (declare (salience 0))
+  =>
+  (focus imprime-recomendaciones))
+
+;;---------------------------------------------------------------------------------
+;;
+;; Modulo imprimir recomendaciones
+;;
+;;---------------------------------------------------------------------------------
+
+(defmodule imprime-recomendaciones "Imprimir las 3 obras que debe visitar"
+  (import preguntas-conocimiento-arte ?ALL)
+  (export ?ALL))
+
