@@ -86,7 +86,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Obras+de+arte
+(defclass Obra+de+arte
 	(is-a USER)
 	(role concrete)
 	(single-slot relevancia
@@ -132,7 +132,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Visitantes
+(defclass Visitante
 	(is-a USER)
 	(role abstract)
 	(single-slot duracion_visitas
@@ -161,7 +161,7 @@
 		(create-accessor read-write)))
 
 (defclass Familia
-	(is-a Visitantes)
+	(is-a Visitante)
 	(role concrete)
 	(single-slot menores
 		(type INTEGER)
@@ -173,7 +173,7 @@
 		(create-accessor read-write)))
 
 (defclass Grupo+normal
-	(is-a Visitantes)
+	(is-a Visitante)
 	(role concrete)
 	(single-slot adultos
 		(type INTEGER)
@@ -181,11 +181,11 @@
 		(create-accessor read-write)))
 
 (defclass Persona
-	(is-a Visitantes)
+	(is-a Visitante)
 	(role concrete))
 
 (defclass Grupo+grande
-	(is-a Visitantes)
+	(is-a Visitante)
 	(role concrete)
 	(single-slot adultos
 		(type INTEGER)
@@ -231,15 +231,15 @@
 		(create-accessor read-write)))
 
 (definstances instances
-	([Autorretrato] of  Obras+de+arte
+	([Autorretrato] of  Obra+de+arte
 
 		(autor [Durero])
 		(complejidad "Alta")
-		(dimensiones "52 cm × 41 cm")
+		(dimensiones "52 cm x 41 cm")
 		(estilo "Renacimiento")
 		(fecha_creacion "1498")
 		(nombre "Autorretrato")
-		(periodo_historico "Renacimiento nórdico")
+		(periodo_historico "Renacimiento nordico")
 		(relevancia 1)
 		(sala [Sala+C])
 		(tematica "Autorretrato"))
@@ -266,7 +266,7 @@
 			"Barroco"
 			"Renacimiento"))
 
-	([David+vencedor+de+Goliath] of  Obras+de+arte
+	([David+vencedor+de+Goliath] of  Obra+de+arte
 
 		(autor [Caravaggio])
 		(complejidad "Alta")
@@ -288,7 +288,7 @@
 		(nombre "Durero")
 		(periodo_historico "Alto Renacimiento"))
 
-	([El+3+de+Mayo+de+1808] of  Obras+de+arte
+	([El+3+de+Mayo+de+1808] of  Obra+de+arte
 
 		(autor [Goya])
 		(complejidad "Muy alta")
@@ -301,7 +301,7 @@
 		(sala [Sala+A])
 		(tematica "Pintura de historia"))
 
-	([El+embarco+de+Santa+Paula+Romana] of  Obras+de+arte
+	([El+embarco+de+Santa+Paula+Romana] of  Obra+de+arte
 
 		(autor [Lorena])
 		(complejidad "Muy alta")
@@ -314,18 +314,37 @@
 		(sala [Sala+D])
 		(tematica "Paisaje"))
 
-	([El+jard%C3%ADn+de+las+delicias] of  Obras+de+arte
+	([El+jardin+de+las+delicias] of  Obra+de+arte
 
 		(autor [Bosco])
 		(complejidad "Muy alta")
 		(dimensiones "2,2 m x 3,89 m")
 		(estilo "Gótico")
 		(fecha_creacion "1503-1515")
-		(nombre "El jardín de las delicias")
-		(periodo_historico "Renacimiento nórdico")
+		(nombre "El jardin de las delicias")
+		(periodo_historico "Renacimiento nordico")
 		(relevancia 1)
 		(sala [Sala+B])
 		(tematica "Arte cristiano"))
+
+	([F001] of  Familia
+
+		(adultos 2)
+		(conocimiento "Nada")
+		(duracion_visitas 1.5)
+		(menores 2)
+		(n_dias_visita 2)
+		(numero_visita "F001")
+		(precio 15.0))
+
+	([GG001] of  Grupo+grande
+
+		(adultos 5)
+		(conocimiento "Nada")
+		(duracion_visitas 3.0)
+		(n_dias_visita 3)
+		(numero_visita "GG001")
+		(precio 40.0))
 
 	([Goya] of  Artista
 
@@ -338,6 +357,15 @@
 		(nombre "Goya")
 		(periodo_historico "Romanticismo"))
 
+	([GP001] of  Grupo+normal
+
+		(adultos 2)
+		(conocimiento "Nada")
+		(duracion_visitas 1.5)
+		(n_dias_visita 1)
+		(numero_visita "GP001")
+		(precio 20.0))
+
 	([Greco] of  Artista
 
 		(epoca "Renacimiento")
@@ -346,24 +374,24 @@
 		(nombre "Greco")
 		(periodo_historico "Renacimiento"))
 
-	([La+Crucifixi%C3%B3n] of  Obras+de+arte
+	([La+Crucifixion] of  Obra+de+arte
 
 		(autor [Greco])
 		(complejidad "Alta")
-		(dimensiones "312 cm × 169 cm")
+		(dimensiones "312 cm x 169 cm")
 		(estilo "Manierismo")
 		(fecha_creacion "1597-1600")
-		(nombre "La Crucifixión")
+		(nombre "La Crucifixion")
 		(periodo_historico "Alto Renacimiento")
 		(relevancia 2)
 		(sala [Sala+C])
 		(tematica "Arte cristiano"))
 
-	([Las+meninas] of  Obras+de+arte
+	([Las+meninas] of  Obra+de+arte
 
-		(autor [Vel%C3%A1zquez])
+		(autor [Velazquez])
 		(complejidad "Alta")
-		(dimensiones "318 cm × 276 cm")
+		(dimensiones "318 cm x 276 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1656")
 		(nombre "Las meninas")
@@ -372,11 +400,11 @@
 		(sala [Sala+A])
 		(tematica "Retrato"))
 
-	([Las+Tres+Gracias] of  Obras+de+arte
+	([Las+Tres+Gracias] of  Obra+de+arte
 
 		(autor [Rubens])
 		(complejidad "Alta")
-		(dimensiones "221 cm × 181 cm")
+		(dimensiones "221 cm x 181 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1636-1639")
 		(nombre "Las Tres Gracias")
@@ -395,35 +423,7 @@
 			"Barroco"
 			"Renacimiento"))
 
-	([Ontologia_Class13] of  Familia
-
-		(adultos 2)
-		(conocimiento "Nada")
-		(duracion_visitas 1.5)
-		(menores 2)
-		(n_dias_visita 2)
-		(numero_visita "F001")
-		(precio 15.0))
-
-	([Ontologia_Class15] of  Grupo+grande
-
-		(adultos 5)
-		(conocimiento "Nada")
-		(duracion_visitas 3.0)
-		(n_dias_visita 3)
-		(numero_visita "GG001")
-		(precio 40.0))
-
-	([Ontologia_Class16] of  Grupo+normal
-
-		(adultos 2)
-		(conocimiento "Nada")
-		(duracion_visitas 1.5)
-		(n_dias_visita 1)
-		(numero_visita "GP001")
-		(precio 20.0))
-
-	([Ontologia_Class17] of  Persona
+	([P001] of  Persona
 
 		(conocimiento "Nada")
 		(duracion_visitas 2.5)
@@ -466,7 +466,7 @@
 		(dimensiones "4 m x 9 m")
 		(nombre "Sala E"))
 
-	([Saturno+devorando+a+un+hijo] of  Obras+de+arte
+	([Saturno+devorando+a+un+hijo] of  Obra+de+arte
 
 		(autor [Goya])
 		(complejidad "Alta")
@@ -479,12 +479,13 @@
 		(sala [Sala+C])
 		(tematica "Crono"))
 
-	([Vel%C3%A1zquez] of  Artista
+	([Velazquez] of  Artista
 
+		(epoca "Barroco")
 		(estilo "naturalista")
 		(fecha_nacimiento "1599")
-		(nacionalidad "Española")
-		(nombre "Velázquez")
+		(nacionalidad "Espanola")
+		(nombre "Velazquez")
 		(periodo_historico "Barroco"))
 )
 
