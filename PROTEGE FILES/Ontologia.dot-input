@@ -1,0 +1,15 @@
+digraph "Ontologia" {
+
+"Grupo pequeño" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Grupo pequeño|{adultos|Integer}}"]
+"Visitantes"->"Grupo pequeño" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Obras de arte" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Obras de arte|{relevancia|Integer}|{autor|Instance|{Artista}}|{estilo|String}|{temática|String}|{fecha_creación|String}|{...}}"]
+"Grupo grande" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Grupo grande|{adultos|Integer}}"]
+"Visitantes"->"Grupo grande" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Artista" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Artista|{estilo|String*}|{nacionalidad|String}|{fecha_nacimiento|String}|{nombre|String}|{periodo_historico|String*}|{...}}"]
+"Sala" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Sala|{nombre|String}|{dimensiones|String}}"]
+"Visitantes" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Visitantes|{Conocimiento|String}|{duración_visitas|Float}|{precio|Float}|{preferencia|String*}|{número_visita|String}|{...}}"]
+"Familia" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Familia|{niños|Integer}|{adultos|Integer}}"]
+"Visitantes"->"Familia" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Persona" [shape=box, label="Persona", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Visitantes"->"Persona" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+}
