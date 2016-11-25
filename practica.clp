@@ -1,741 +1,497 @@
-; Fri Dec 04 18:41:09 CET 2015
-; 
-;+ (version "3.5")
-;+ (build "Build 663")
-
-
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot mundos-fantasticos
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot tipo-obra
-		(type SYMBOL)
-		(allowed-values de-moda clasico normal)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot obras-similares
+	(single-slot fecha_nacimiento
 		(type STRING)
-		(cardinality 1 ?VARIABLE)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot epoca
-		(type SYMBOL)
-		(allowed-values ciencia-ficcion fantastica romantica negra)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot protagonistas
-		(type SYMBOL)
-		(allowed-values detectives mafiosos juzgados)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot viajes-temporales
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot titulo
+	(multislot preferencia
 		(type STRING)
-;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot tipo-visitante
-		(type SYMBOL)
-		(allowed-values casual avanzado)
-;+		(cardinality 1 1)
+	(single-slot n_dias_visita
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot longitud
-		(type SYMBOL)
-		(allowed-values corto largo)
-;+		(cardinality 1 1)
+	(single-slot numero_visita
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot obras_Class4
+	(single-slot relevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duracion_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conocimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creacion
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot tipo-romance
-		(type SYMBOL)
-		(allowed-values historico contemporaneo fantastico)
-;+		(cardinality 1 1)
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot muy-sensual
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot formato
-		(type SYMBOL)
-		(allowed-values ebook tapa-dura tapa-blanda)
-;+		(cardinality 1 1)
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot best-seller
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(multislot periodo_historico
+		(type STRING)
 		(create-accessor read-write))
-	(single-slot futuro-alternativo
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot raza
-		(type SYMBOL)
-		(allowed-values enanos elfos orcos humanos otras)
-;+		(cardinality 1 1)
+	(single-slot menores
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot accion
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(multislot estilo
+		(type STRING)
 		(create-accessor read-write))
-	(single-slot utopia-distopia
-		(type SYMBOL)
-		(allowed-values utopia distopia ninguna)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot edad
-		(type SYMBOL)
-		(allowed-values todos-publicos adultos)
-;+		(cardinality 1 1)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Libro
+(defclass Obras+de+arte
 	(is-a USER)
 	(role concrete)
-	(single-slot epoca
-		(type SYMBOL)
-		(allowed-values ciencia-ficcion fantastica romantica negra)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot longitud
-		(type SYMBOL)
-		(allowed-values corto largo)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot best-seller
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot edad
-		(type SYMBOL)
-		(allowed-values todos-publicos adultos)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot tipo-obra
-		(type SYMBOL)
-		(allowed-values de-moda clasico normal)
-;+		(cardinality 1 1)
+	(single-slot relevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creacion
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot formato
-		(type SYMBOL)
-		(allowed-values ebook tapa-dura tapa-blanda)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot titulo
+	(single-slot estilo
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot tipo-visitante
-		(type SYMBOL)
-		(allowed-values casual avanzado)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot obras-similares
+	(single-slot nombre
 		(type STRING)
-		(cardinality 1 ?VARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot periodo_historico
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass LibroCiFi
-	(is-a Libro)
+(defclass Visitantes
+	(is-a USER)
+	(role abstract)
+	(single-slot duracion_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot n_dias_visita
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conocimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_visita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Familia
+	(is-a Visitantes)
 	(role concrete)
-	(single-slot viajes-temporales
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot menores
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot futuro-alternativo
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot utopia-distopia
-		(type SYMBOL)
-		(allowed-values utopia distopia ninguna)
-;+		(cardinality 1 1)
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass LibroFantastica
-	(is-a Libro)
+(defclass Grupo+normal
+	(is-a Visitantes)
 	(role concrete)
-	(single-slot raza
-		(type SYMBOL)
-		(allowed-values enanos elfos orcos humanos otras)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot mundos-fantasticos
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass LibroRomantica
-	(is-a Libro)
+(defclass Persona
+	(is-a Visitantes)
+	(role concrete))
+
+(defclass Grupo+grande
+	(is-a Visitantes)
 	(role concrete)
-	(single-slot tipo-romance
-		(type SYMBOL)
-		(allowed-values historico contemporaneo fantastico)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot muy-sensual
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass LibroNegra
-	(is-a Libro)
+(defclass Artista
+	(is-a USER)
 	(role concrete)
-	(single-slot protagonistas
-		(type SYMBOL)
-		(allowed-values detectives mafiosos juzgados)
-;+		(cardinality 1 1)
+	(multislot estilo
+		(type STRING)
 		(create-accessor read-write))
-	(single-slot accion
-		(type SYMBOL)
-		(allowed-values si no)
-;+		(cardinality 1 1)
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_nacimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot periodo_historico
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-; Fri Dec 04 18:41:09 CET 2015
-; 
-;+ (version "3.5")
-;+ (build "Build 663")
-(definstances catalogo
-([obras_Class0] of  LibroCiFi
+(defclass Sala
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
 
-	(autor "Joseph Wolf")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(futuro-alternativo si)
-	(obras-similares "Hemoplastia")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(titulo "BrazeRunner")
-	(utopia-distopia distopia)
-	(viajes-temporales no))
+(definstances instances
+	([Autorretrato] of  Obras+de+arte
 
-([obras_Class1] of  LibroCiFi
+		(autor [Durero])
+		(complejidad "Alta")
+		(dimensiones "52 cm × 41 cm")
+		(estilo "Renacimiento")
+		(fecha_creacion "1498")
+		(nombre "Autorretrato")
+		(periodo_historico "Renacimiento nórdico")
+		(relevancia 1)
+		(sala [Sala+C])
+		(tematica "Autorretrato"))
 
-	(autor "Booker DeWith")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(futuro-alternativo si)
-	(obras-similares
-		"Hemoplastia"
-		"Columbia")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(titulo "About time")
-	(utopia-distopia distopia)
-	(viajes-temporales si))
+	([Bosco] of  Artista
 
-([obras_Class10004] of  LibroCiFi
+		(epoca "Renacimiento")
+		(estilo "naturalista")
+		(fecha_nacimiento "1450")
+		(nacionalidad "Paises Bajos")
+		(nombre "Bosco")
+		(periodo_historico
+			"Pintura flamenca"
+			"Renacimiento"))
 
-	(autor "Javier Bejar")
-	(best-seller no)
-	(edad adultos)
-	(formato ebook)
-	(futuro-alternativo si)
-	(obras-similares "La granja")
-	(longitud corto)
-	(epoca ciencia-ficcion)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "La radiacion de fondo")
-	(utopia-distopia utopia)
-	(viajes-temporales si))
+	([Caravaggio] of  Artista
 
-([obras_Class10005] of  LibroCiFi
+		(epoca "Barroco-Renacentista")
+		(estilo "naturalista")
+		(fecha_nacimiento "1571")
+		(nacionalidad "Romana")
+		(nombre "Caravaggio")
+		(periodo_historico
+			"Barroco"
+			"Renacimiento"))
 
-	(autor "Joseph Wolf")
-	(best-seller no)
-	(edad todos-publicos)
-	(formato ebook)
-	(futuro-alternativo no)
-	(obras-similares "La granja")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante casual)
-	(tipo-obra de-moda)
-	(titulo "1987")
-	(utopia-distopia ninguna)
-	(viajes-temporales no))
+	([David+vencedor+de+Goliath] of  Obras+de+arte
 
-([obras_Class10006] of  LibroFantastica
+		(autor [Caravaggio])
+		(complejidad "Alta")
+		(dimensiones "1,1 m x 91 cm")
+		(estilo "Barroco")
+		(fecha_creacion "1599")
+		(nombre "David vencedor de Goliath")
+		(periodo_historico "Barroco")
+		(relevancia 2)
+		(sala [Sala+D])
+		(tematica "Arte cristiano"))
 
-	(autor "Jorge Ramon Ramon Martin")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares "La doncella y el oso")
-	(longitud largo)
-	(mundos-fantasticos si)
-	(raza humanos)
-	(epoca fantastica)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(titulo "Juego de Tonos"))
+	([Durero] of  Artista
 
-([obras_Class10007] of  LibroFantastica
+		(epoca "Renacimiento")
+		(estilo "naturalista")
+		(fecha_nacimiento "1471")
+		(nacionalidad "Alemana")
+		(nombre "Durero")
+		(periodo_historico "Alto Renacimiento"))
 
-	(autor "Ron Coletti")
-	(best-seller no)
-	(edad todos-publicos)
-	(formato ebook)
-	(obras-similares "La doncella y el oso")
-	(longitud corto)
-	(mundos-fantasticos si)
-	(raza elfos)
-	(epoca fantastica)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(titulo "Sistema Experto"))
+	([El+3+de+Mayo+de+1808] of  Obras+de+arte
 
-([obras_Class10008] of  LibroFantastica
+		(autor [Goya])
+		(complejidad "Muy alta")
+		(dimensiones "2,68 m x 3,47 m")
+		(estilo "Prerromanticismo")
+		(fecha_creacion "1814")
+		(nombre "El 3 de Mayo de 1808")
+		(periodo_historico "Romanticismo")
+		(relevancia 4)
+		(sala [Sala+A])
+		(tematica "Pintura de historia"))
 
-	(autor "Jorge Ramon Ramon Martin")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-dura)
-	(obras-similares "Verde Rojo Azul")
-	(longitud largo)
-	(mundos-fantasticos si)
-	(raza orcos)
-	(epoca fantastica)
-	(tipo-visitante casual)
-	(tipo-obra clasico)
-	(titulo "Worlds of Draenor"))
+	([El+embarco+de+Santa+Paula+Romana] of  Obras+de+arte
 
-([obras_Class10009] of  LibroFantastica
+		(autor [Lorena])
+		(complejidad "Muy alta")
+		(dimensiones "211 cm x 145 cm")
+		(estilo "Clacisismo")
+		(fecha_creacion "1639-1640")
+		(nombre "El embarco de Santa Paula Romana")
+		(periodo_historico "Barroco")
+		(relevancia 2)
+		(sala [Sala+D])
+		(tematica "Paisaje"))
 
-	(autor "James Milk")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato ebook)
-	(obras-similares
-		"Sistema Experto"
-		"Juego de Tonos")
-	(longitud corto)
-	(mundos-fantasticos no)
-	(raza otras)
-	(epoca fantastica)
-	(tipo-visitante casual)
-	(tipo-obra clasico)
-	(titulo "La doncella y el oso"))
+	([El+jard%C3%ADn+de+las+delicias] of  Obras+de+arte
 
-([obras_Class10010] of  LibroFantastica
+		(autor [Bosco])
+		(complejidad "Muy alta")
+		(dimensiones "2,2 m x 3,89 m")
+		(estilo "Gótico")
+		(fecha_creacion "1503-1515")
+		(nombre "El jardín de las delicias")
+		(periodo_historico "Renacimiento nórdico")
+		(relevancia 1)
+		(sala [Sala+B])
+		(tematica "Arte cristiano"))
 
-	(autor "Ron Coletti")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares
-		"Worlds of Draenor"
-		"Mazmorras y Salamandras")
-	(longitud corto)
-	(mundos-fantasticos no)
-	(raza humanos)
-	(epoca fantastica)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(titulo "Verde Rojo Azul"))
+	([Goya] of  Artista
 
-([obras_Class10011] of  LibroFantastica
+		(epoca "Romanticismo")
+		(estilo
+			"Barroco"
+			"Neoclasico")
+		(fecha_nacimiento "1828")
+		(nacionalidad "Francesa")
+		(nombre "Goya")
+		(periodo_historico "Romanticismo"))
 
-	(autor "Ron Coletti")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares "El señor de los pardillos")
-	(longitud largo)
-	(mundos-fantasticos si)
-	(raza otras)
-	(epoca fantastica)
-	(tipo-visitante casual)
-	(tipo-obra de-moda)
-	(titulo "Depredador"))
+	([Greco] of  Artista
 
-([obras_Class10012] of  LibroCiFi
+		(epoca "Renacimiento")
+		(fecha_nacimiento "1541")
+		(nacionalidad "Griega")
+		(nombre "Greco")
+		(periodo_historico "Renacimiento"))
 
-	(autor "Leonardo Nimoyo")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato tapa-dura)
-	(futuro-alternativo no)
-	(obras-similares "Columbia")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(titulo "Un dia como Vulcano")
-	(utopia-distopia ninguna)
-	(viajes-temporales si))
+	([La+Crucifixi%C3%B3n] of  Obras+de+arte
 
-([obras_Class10013] of  LibroCiFi
+		(autor [Greco])
+		(complejidad "Alta")
+		(dimensiones "312 cm × 169 cm")
+		(estilo "Manierismo")
+		(fecha_creacion "1597-1600")
+		(nombre "La Crucifixión")
+		(periodo_historico "Alto Renacimiento")
+		(relevancia 2)
+		(sala [Sala+C])
+		(tematica "Arte cristiano"))
 
-	(autor "Booker DeWith")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-dura)
-	(futuro-alternativo no)
-	(obras-similares "Un dia como Vulcano")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "Columbia")
-	(utopia-distopia utopia)
-	(viajes-temporales si))
+	([Las+meninas] of  Obras+de+arte
 
-([obras_Class10014] of  LibroFantastica
+		(autor [Vel%C3%A1zquez])
+		(complejidad "Alta")
+		(dimensiones "318 cm × 276 cm")
+		(estilo "Barroco")
+		(fecha_creacion "1656")
+		(nombre "Las meninas")
+		(periodo_historico "Barroco")
+		(relevancia 3)
+		(sala [Sala+A])
+		(tematica "Retrato"))
 
-	(autor "Jeremias Sauron")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(obras-similares "Depredador")
-	(longitud largo)
-	(mundos-fantasticos si)
-	(raza orcos)
-	(epoca fantastica)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "El señor de los pardillos"))
+	([Las+Tres+Gracias] of  Obras+de+arte
 
-([obras_Class10015] of  LibroFantastica
+		(autor [Rubens])
+		(complejidad "Alta")
+		(dimensiones "221 cm × 181 cm")
+		(estilo "Barroco")
+		(fecha_creacion "1636-1639")
+		(nombre "Las Tres Gracias")
+		(periodo_historico "Barroco")
+		(relevancia 1)
+		(sala [Sala+E])
+		(tematica "Pintura de historia"))
 
-	(autor "Jeremias Sauron")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato tapa-blanda)
-	(obras-similares "Verde Rojo Azul")
-	(longitud largo)
-	(mundos-fantasticos si)
-	(raza enanos)
-	(epoca fantastica)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "Mazmorras y Salamandras"))
+	([Lorena] of  Artista
 
-([obras_Class10016] of  LibroNegra
+		(epoca "Barroco")
+		(fecha_nacimiento "1600")
+		(nacionalidad "Francesa")
+		(nombre "Lorena")
+		(periodo_historico
+			"Barroco"
+			"Renacimiento"))
 
-	(accion si)
-	(autor "Esteban Reyes")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-dura)
-	(obras-similares
-		"En busca de la ontologia perdida"
-		"El cabo del pavor")
-	(longitud corto)
-	(protagonistas detectives)
-	(epoca negra)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(titulo "La tapadera"))
+	([Ontologia_Class13] of  Familia
 
-([obras_Class10017] of  LibroNegra
+		(adultos 2)
+		(conocimiento "Nada")
+		(duracion_visitas 1.5)
+		(menores 2)
+		(n_dias_visita 2)
+		(numero_visita "F001")
+		(precio 15.0))
 
-	(accion si)
-	(autor "Esteban Reyes")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(obras-similares
-		"La tapadera"
-		"Spanish History Z"
-		"Spanish History Y")
-	(longitud corto)
-	(protagonistas mafiosos)
-	(epoca negra)
-	(tipo-visitante casual)
-	(tipo-obra de-moda)
-	(titulo "En busca de la ontologia perdida"))
+	([Ontologia_Class15] of  Grupo+grande
 
-([obras_Class10018] of  LibroNegra
+		(adultos 5)
+		(conocimiento "Nada")
+		(duracion_visitas 3.0)
+		(n_dias_visita 3)
+		(numero_visita "GG001")
+		(precio 40.0))
 
-	(accion no)
-	(autor "Kevin Safer")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato ebook)
-	(obras-similares "La tapadera")
-	(longitud corto)
-	(protagonistas mafiosos)
-	(epoca negra)
-	(tipo-visitante avanzado)
-	(tipo-obra normal)
-	(titulo "El cabo del pavor"))
+	([Ontologia_Class16] of  Grupo+normal
 
-([obras_Class10019] of  LibroNegra
+		(adultos 2)
+		(conocimiento "Nada")
+		(duracion_visitas 1.5)
+		(n_dias_visita 1)
+		(numero_visita "GP001")
+		(precio 20.0))
 
-	(accion no)
-	(autor "Kevin Safer")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares
-		"Una historia de violencia"
-		"El gemelo perdido")
-	(longitud corto)
-	(protagonistas juzgados)
-	(epoca negra)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(titulo "La sala oculta"))
+	([Ontologia_Class17] of  Persona
 
-([obras_Class10020] of  LibroNegra
+		(conocimiento "Nada")
+		(duracion_visitas 2.5)
+		(n_dias_visita 2)
+		(numero_visita "P001")
+		(precio 5.0))
 
-	(accion si)
-	(autor "Rodolfo Charles")
-	(best-seller no)
-	(edad todos-publicos)
-	(formato tapa-blanda)
-	(obras-similares "La sala oculta")
-	(longitud corto)
-	(protagonistas detectives)
-	(epoca negra)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(titulo "El gemelo perdido"))
+	([Rubens] of  Artista
 
-([obras_Class10021] of  LibroNegra
+		(epoca "Barroco")
+		(fecha_nacimiento "1577")
+		(nacionalidad "Alemana")
+		(nombre "Rubens")
+		(periodo_historico
+			"Barroco"
+			"Escuela de Amberes"))
 
-	(accion si)
-	(autor "Ramon Cajon")
-	(best-seller no)
-	(edad adultos)
-	(formato ebook)
-	(obras-similares
-		"En busca de la ontologia perdida"
-		"Spanish History Y")
-	(longitud corto)
-	(protagonistas mafiosos)
-	(epoca negra)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "Spanish History Z"))
+	([Sala+A] of  Sala
 
-([obras_Class10023] of  LibroNegra
+		(dimensiones "4 m x 5 m")
+		(nombre "Sala A"))
 
-	(accion no)
-	(autor "Ramon Cajon")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(obras-similares "La sala oculta")
-	(longitud corto)
-	(protagonistas detectives)
-	(epoca negra)
-	(tipo-visitante casual)
-	(tipo-obra de-moda)
-	(titulo "Una historia de violencia"))
+	([Sala+B] of  Sala
 
-([obras_Class10026] of  LibroNegra
+		(dimensiones "6 m x 8 m")
+		(nombre "Sala B"))
 
-	(accion si)
-	(autor "Ramon Cajon")
-	(best-seller si)
-	(edad adultos)
-	(formato ebook)
-	(obras-similares
-		"En busca de la ontologia perdida"
-		"Spanish History Z")
-	(longitud corto)
-	(protagonistas mafiosos)
-	(epoca negra)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(titulo "Spanish History Y"))
+	([Sala+C] of  Sala
 
-([obras_Class10027] of  LibroRomantica
+		(dimensiones "12 m x 24 m")
+		(nombre "Sala C"))
 
-	(autor "Susan Sander")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-blanda)
-	(longitud largo)
-	(muy-sensual si)
-	(epoca romantica)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(tipo-romance historico)
-	(titulo "Ojala yo tuviera este primero"))
+	([Sala+D] of  Sala
 
-([obras_Class10028] of  LibroRomantica
+		(dimensiones "14 m x 7 m")
+		(nombre "Sala D"))
 
-	(autor "David de Mairena")
-	(best-seller si)
-	(edad adultos)
-	(formato ebook)
-	(obras-similares "Los blancos no la saben meter")
-	(longitud largo)
-	(muy-sensual no)
-	(epoca romantica)
-	(tipo-visitante avanzado)
-	(tipo-obra normal)
-	(tipo-romance contemporaneo)
-	(titulo "Las mujeres aguantan mas"))
+	([Sala+E] of  Sala
 
-([obras_Class10029] of  LibroRomantica
+		(dimensiones "4 m x 9 m")
+		(nombre "Sala E"))
 
-	(autor "Susan Sander")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato tapa-blanda)
-	(obras-similares
-		"Relacion a CLIPStancia"
-		"Cumbres Borrascosas")
-	(longitud corto)
-	(muy-sensual no)
-	(epoca romantica)
-	(tipo-visitante casual)
-	(tipo-obra clasico)
-	(tipo-romance fantastico)
-	(titulo "Pasion de Centollos"))
+	([Saturno+devorando+a+un+hijo] of  Obras+de+arte
 
-([obras_Class10030] of  LibroRomantica
+		(autor [Goya])
+		(complejidad "Alta")
+		(dimensiones "1,43 m x 81 cm")
+		(estilo "Romanticismo")
+		(fecha_creacion "1819-1823")
+		(nombre "Saturno devorando a un hijo")
+		(periodo_historico "Renacimiento")
+		(relevancia 3)
+		(sala [Sala+C])
+		(tematica "Crono"))
 
-	(autor "Jack Neylon")
-	(best-seller si)
-	(edad todos-publicos)
-	(formato ebook)
-	(obras-similares "Las mujeres aguantan mas")
-	(longitud corto)
-	(muy-sensual no)
-	(epoca romantica)
-	(tipo-visitante avanzado)
-	(tipo-obra normal)
-	(tipo-romance fantastico)
-	(titulo "Los blancos no la saben meter"))
+	([Vel%C3%A1zquez] of  Artista
 
-([obras_Class10031] of  LibroRomantica
+		(estilo "naturalista")
+		(fecha_nacimiento "1599")
+		(nacionalidad "Española")
+		(nombre "Velázquez")
+		(periodo_historico "Barroco"))
+)
 
-	(autor "Jack Neylon")
-	(best-seller no)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares
-		"El triangulo del amor"
-		"Pasion de Centollos")
-	(longitud largo)
-	(muy-sensual si)
-	(epoca romantica)
-	(tipo-visitante avanzado)
-	(tipo-obra de-moda)
-	(tipo-romance fantastico)
-	(titulo "Cumbres Borrascosas"))
 
-([obras_Class10032] of  LibroRomantica
-
-	(autor "Susan Sander")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-blanda)
-	(obras-similares "Cumbres Borrascosas")
-	(longitud corto)
-	(muy-sensual no)
-	(epoca romantica)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(tipo-romance historico)
-	(titulo "El triangulo del amor"))
-
-([obras_Class10033] of  LibroRomantica
-
-	(autor "Jack Neylon")
-	(best-seller no)
-	(edad adultos)
-	(formato ebook)
-	(obras-similares "Pasion de Centollos")
-	(longitud largo)
-	(muy-sensual si)
-	(epoca romantica)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(tipo-romance contemporaneo)
-	(titulo "Relacion a CLIPStancia"))
-
-([obras_Class10034] of  LibroRomantica
-
-	(autor "David de Mairena")
-	(best-seller no)
-	(edad adultos)
-	(formato ebook)
-	(obras-similares "Ojala yo tuviera este primero")
-	(longitud corto)
-	(muy-sensual no)
-	(epoca romantica)
-	(tipo-visitante casual)
-	(tipo-obra normal)
-	(tipo-romance fantastico)
-	(titulo "La ultima relacion"))
-
-([obras_Class2] of  LibroCiFi
-
-	(autor "Tom Anderson")
-	(best-seller si)
-	(edad adultos)
-	(formato tapa-dura)
-	(futuro-alternativo no)
-	(obras-similares
-		"BrazeRunner"
-		"About time")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante avanzado)
-	(tipo-obra clasico)
-	(titulo "Hemoplastia")
-	(utopia-distopia distopia)
-	(viajes-temporales no))
-
-([obras_Class3] of  LibroCiFi
-
-	(autor "Joseph Wolf")
-	(best-seller no)
-	(edad todos-publicos)
-	(formato tapa-blanda)
-	(futuro-alternativo no)
-	(obras-similares
-		"La radiacion de fondo"
-		"1987")
-	(longitud largo)
-	(epoca ciencia-ficcion)
-	(tipo-visitante casual)
-	(tipo-obra de-moda)
-	(titulo "La granja")
-	(utopia-distopia utopia)
-	(viajes-temporales si))
-		)
 ;;---------------------------------------------------------
 ;;
-;; Template para las recomendaciones:
+;; Template para las RECOMENDACIONES:
 ;;
 ;;---------------------------------------------------------
 
@@ -747,28 +503,25 @@
 
 ;;---------------------------------------------------------
 ;;
-;; Template para guardar la epoca preferida del visitante
+;; Template para guardar la EPOCA PREFERIDA del visitante
 ;;
 ;;---------------------------------------------------------
 
 (deftemplate epoca "epoca preferida"
   (slot nombre))
 
-	
-
 ;;---------------------------------------------------------
 ;;
-;; Cuantos obras hemos imprimido
+;; Cuantos OBRAS hemos imprimido
 ;;
 ;;---------------------------------------------------------
 
 (defglobal ?*recomendacionesImprimidas* = 0)
 
 
-
 ;;---------------------------------------------------------
 ;;
-;; Funciones para preguntar cosas
+;; Funciones para PREGUNTAR cosas
 ;;
 ;;---------------------------------------------------------
 
@@ -830,6 +583,62 @@
     ?lista
 )
 
+;;----------------------------------------------------------------
+;;
+;; Funciones para tocar el PRIORIDAD de todas las recomendaciones
+;;
+;;----------------------------------------------------------------
+
+;;------------------------------------------------------
+;; Incrementa el prioridad del hecho ?recomendacion en ?inc
+;;------------------------------------------------------
+(deffunction incrementa-prioridad-recomendacion (?recomendacion ?inc)
+  (modify ?recomendacion (prioridad (+ (fact-slot-value ?recomendacion prioridad) ?inc))))
+
+
+;;-------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; tiene el slot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;-------------------------------------------------------------
+(deffunction incrementa-prioridad-obras (?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (eq (send ?obra (sym-cat get- ?slot)) ?valor) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+;;-------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; tiene el multislot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;-------------------------------------------------------------
+(deffunction incrementa-prioridad-obras-lista (?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (member ?valor (send ?obra (sym-cat get- ?slot))) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+
+;;---------------------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; es de epoca ?epoca, y tiene el slot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;---------------------------------------------------------------------------
+(deffunction incrementa-prioridad-obras-epoca (?epoca ?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (and
+        (eq (send ?obra get-epoca) ?epoca)
+        (eq (send ?obra (sym-cat get- ?slot)) ?valor)) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+
 ;;---------------------------------------------------------------------------------------------------------
 ;;
 ;; A partir de una base de datos de obras, queremos:
@@ -838,7 +647,7 @@
 ;;   Esa relación influye en el valor del prioridad de un recomendacion, si el obra correspondiente 
 ;;   satisface las preferencias del usuario.
 ;;
-;; Naturalmente, algunas preferencias tendrán más peso que otras; por ejemplo la temática del obra aporta 
+;; Naturalmente, algunas preferencias tendrán más peso que otras; por ejemplo la epoca del obra aporta 
 ;; más peso a la recomendación que la selección del formato (ebook, tapa-dura, tapa-blanda)
 ;;
 ;; La edad del visitante también influye, ya que los obras para adultos no se pueden recomendar a los menores
@@ -858,12 +667,23 @@
 ;;
 ;; Aqui empezamos con el modulo MAIN
 ;; En este módulo simplemente inicializamos las recomendaciones
-;; y pasamos al siguiente módulo: elegir las temática preferida
+;; y pasamos al siguiente módulo: elegir las epoca preferida
 ;;
 ;;---------------------------------------------------------------------------------------------------------
 
 (defmodule MAIN (export ?ALL))
 
+
+
+;;-----------------------------------------------------------------------------------------
+;; Inicializar las recomendaciones con prioridad 0
+;; Regla inicial: para cada instancia de obra, crear el hecho (recomendacion obra prioridad)
+;;-----------------------------------------------------------------------------------------
+(defrule init-recomendaciones
+  (declare (salience 1))
+  ?obra <- (object (is-a Obras+de+arte))
+  =>
+  (assert (recomendacion (obra ?obra) (prioridad 0))))
 
 
 ;; Pasar al modulo de seleccion de epoca
@@ -889,3 +709,25 @@
   (export ?ALL))
 
 
+;; Determinar la epoca preferida del usuario
+;; Seleccionar una epoca hace que las puntuaciones 
+;;---------------------------------------------
+(defrule pregunta-epoca "¿Qué epoca prefieres? Arte clásico, Medieval, Moderno, Contemporáneo"
+  (declare (salience 5))
+  ?t <- (epoca (nombre desconocida))
+  =>
+  (bind ?response
+    (ask-question "¿Qué epoca prefieres?%n  1 - Arte clásico%n  2 - Medieval%n  3 - Moderno%n  4 - Contemporáneo"
+                  1 2 3 4))
+  (if (eq ?response 1) 
+    then (modify ?t (nombre Arte-clasico))
+         (incrementa-prioridad-obras epoca Arte-clasico 1000))
+  (if (eq ?response 2) 
+    then (modify ?t (nombre Medieval))
+         (incrementa-prioridad-obras epoca Medieval 1000))
+  (if (eq ?response 3) 
+    then (modify ?t (nombre Moderno))
+         (incrementa-prioridad-obras epoca Moderno 1000))
+  (if (eq ?response 4) 
+    then (modify ?t (nombre Contemporaneo))
+         (incrementa-prioridad-obras epoca Contemporaneo 1000)))
