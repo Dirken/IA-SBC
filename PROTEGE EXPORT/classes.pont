@@ -1,4 +1,4 @@
-; Tue Nov 29 01:06:48 CET 2016
+; Wed Nov 30 00:00:16 CET 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -7,6 +7,10 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
+	(single-slot nombre_centro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot fecha_nacimiento
 		(type STRING)
 ;+		(cardinality 0 1)
@@ -160,10 +164,6 @@
 	(single-slot conocimiento
 		(type STRING)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot numero_visita
-		(type STRING)
-;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Familia
@@ -178,7 +178,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Grupo+normal
+(defclass Grupo+Normal
 	(is-a Visitante)
 	(role concrete)
 	(single-slot adultos
@@ -190,9 +190,25 @@
 	(is-a Visitante)
 	(role concrete))
 
-(defclass Grupo+grande
+(defclass Grupo+Grande
 	(is-a Visitante)
 	(role concrete)
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Grupo+Escolar
+	(is-a Visitante)
+	(role concrete)
+	(single-slot menores
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre_centro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot adultos
 		(type INTEGER)
 ;+		(cardinality 0 1)
