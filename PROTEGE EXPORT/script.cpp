@@ -8,6 +8,7 @@ int main(){
     ifstream loadFile;
     loadFile.open("classes.pont");
     if (loadFile.is_open()) {
+	    for(int i=0; i<=3; ++i) getline(loadFile, linea);
         while (getline(loadFile, linea)) outputFile << linea + "\n";
         cout << "Archivo classes.pont leido correctamente." << endl;
     } else {
@@ -18,6 +19,7 @@ int main(){
     outputFile << "\n(definstances Instances\n";
     loadFile.open("instances.pins");
     if (loadFile.is_open()) {
+	    for(int i=0; i<=3; ++i) getline(loadFile, linea);
         while (getline(loadFile, linea)) outputFile << "\t" + linea + "\n";
         cout << "Archivo instances.pins leido correctamente.";
     } else {
