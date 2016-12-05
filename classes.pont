@@ -1,0 +1,500 @@
+; Fri Nov 25 00:16:32 CET 2016
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot Conocimiento
+		(type STRING)
+		(default "Nada")
+;+		(value "Nada" "Básico" "Avanzado" "Experto")
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_nacimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot n_dias_visita
+		(type INTEGER)
+		(range 1 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot relevancia
+		(type INTEGER)
+		(default 1)
+;+		(value 1 2 3 4 5)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duraci%C3%B3n_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+		(range 0.5 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot adultos
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ni%C3%B1os
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creaci%C3%B3n
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot periodo_historico
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot tem%C3%A1tica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot n%C3%BAmero_visita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Obras+de+arte
+	(is-a USER)
+	(role concrete)
+	(single-slot relevancia
+		(type INTEGER)
+		(default 1)
+;+		(value 1 2 3 4 5)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tem%C3%A1tica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creaci%C3%B3n
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot periodo_historico
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Visitantes
+	(is-a USER)
+	(role abstract)
+	(single-slot Conocimiento
+		(type STRING)
+		(default "Nada")
+;+		(value "Nada" "Básico" "Avanzado" "Experto")
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duraci%C3%B3n_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+		(range 0.5 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot n%C3%BAmero_visita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot n_dias_visita
+		(type INTEGER)
+		(range 1 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Familia
+	(is-a Visitantes)
+	(role concrete)
+	(single-slot ni%C3%B1os
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot adultos
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Grupo+peque%C3%B1o
+	(is-a Visitantes)
+	(role concrete)
+	(single-slot adultos
+		(type INTEGER)
+		(range 1 5)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Persona
+	(is-a Visitantes)
+	(role concrete))
+
+(defclass Grupo+grande
+	(is-a Visitantes)
+	(role concrete)
+	(single-slot adultos
+		(type INTEGER)
+		(range 5 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Artista
+	(is-a USER)
+	(role concrete)
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_nacimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot periodo_historico
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Sala
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dimensiones
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+
+
+;;---------------------------------------------------------
+;;
+;; Template para las RECOMENDACIONES:
+;;
+;;---------------------------------------------------------
+
+(deftemplate recomendacion
+     (slot obra)
+     (slot prioridad))
+
+
+
+;;---------------------------------------------------------
+;;
+;; Template para guardar la EPOCA PREFERIDA del visitante
+;;
+;;---------------------------------------------------------
+
+(deftemplate epoca "epoca preferida"
+  (slot nombre))
+
+;;---------------------------------------------------------
+;;
+;; Cuantos OBRAS hemos imprimido
+;;
+;;---------------------------------------------------------
+
+(defglobal ?*recomendacionesImprimidas* = 0)
+
+
+;;---------------------------------------------------------
+;;
+;; Funciones para PREGUNTAR cosas
+;;
+;;---------------------------------------------------------
+
+;;------------------------------------------------------------------
+;; Obtiene una respuesta de entre un conjunto de respuestas posibles
+;;------------------------------------------------------------------
+(deffunction ask-question (?question $?allowed-values)
+   (format t (str-cat "%n" ?question "%n"))
+   (bind ?answer (read))
+   (while (not (member ?answer ?allowed-values)) do
+      (format t (str-cat "%n" ?question "%n"))
+      (bind ?answer (read)))
+   ?answer)
+
+;;-----------------------------------------------------
+;; Hace una pregunta a la que hay que responder si o no
+;;-----------------------------------------------------
+(deffunction si-o-no-p (?question)
+   (bind ?response (ask-question ?question si no s n))
+   (if (or (eq ?response si) (eq ?response s))
+     then TRUE
+     else FALSE))
+
+;;--------------------------------------------------------------------------
+;; Hace una pregunta a la que hay que responder con un numero entre un rango
+;;--------------------------------------------------------------------------
+(deffunction pregunta-numerica (?pregunta ?rangini ?rangfi)
+  (format t "%n%s [%d, %d]%n" ?pregunta ?rangini ?rangfi)
+  (bind ?respuesta (read))
+  (while (not (and (>= ?respuesta ?rangini) (<= ?respuesta ?rangfi))) do
+    (format t "%n%s [%d, %d]%n" ?pregunta ?rangini ?rangfi)
+    (bind ?respuesta (read)))
+  ?respuesta)
+
+
+;;--------------------------------------------
+;; Hace una pregunta multi respuesta por comas
+;;--------------------------------------------
+
+(deffunction pregunta-multi (?pregunta $?valores-posibles)
+    (bind ?linea (format nil "%s" ?pregunta))
+    (printout t ?linea crlf)
+    (progn$ (?var ?valores-posibles) 
+            (bind ?linea (format nil "  %d. %s" ?var-index ?var))
+            (printout t ?linea crlf)
+    )
+    (format t "%s" "Indica los números separados por un espacio: ")
+    (bind ?resp (readline))
+    (bind ?numeros (str-explode ?resp))
+    (bind $?lista (create$ ))
+    (progn$ (?var ?numeros) 
+        (if (and (integerp ?var) (and (>= ?var 1) (<= ?var (length$ ?valores-posibles))))
+            then 
+                (if (not (member$ ?var ?lista))
+                    then (bind ?lista (insert$ ?lista (+ (length$ ?lista) 1) ?var))
+                )
+        ) 
+    )
+    ?lista
+)
+
+;;----------------------------------------------------------------
+;;
+;; Funciones para tocar el PRIORIDAD de todas las recomendaciones
+;;
+;;----------------------------------------------------------------
+
+;;------------------------------------------------------
+;; Incrementa el prioridad del hecho ?recomendacion en ?inc
+;;------------------------------------------------------
+(deffunction incrementa-prioridad-recomendacion (?recomendacion ?inc)
+  (modify ?recomendacion (prioridad (+ (fact-slot-value ?recomendacion prioridad) ?inc))))
+
+
+;;-------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; tiene el slot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;-------------------------------------------------------------
+(deffunction incrementa-prioridad-obras (?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (eq (send ?obra (sym-cat get- ?slot)) ?valor) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+;;-------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; tiene el multislot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;-------------------------------------------------------------
+(deffunction incrementa-prioridad-obras-lista (?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (member ?valor (send ?obra (sym-cat get- ?slot))) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+
+;;---------------------------------------------------------------------------
+;; Incrementa el prioridad de todas las recomandaciones cuyo obra
+;; es de epoca ?epoca, y tiene el slot ?slot con valor igual que ?valor
+;; El incremento de prioridad será de ?inc
+;;---------------------------------------------------------------------------
+(deffunction incrementa-prioridad-obras-epoca (?epoca ?slot ?valor ?inc)
+  (progn$ (?f (get-fact-list)) 
+    (if (eq (fact-relation ?f) recomendacion) then 
+      (bind ?obra (fact-slot-value ?f obra))
+      (if (and
+        (eq (send ?obra get-epoca) ?epoca)
+        (eq (send ?obra (sym-cat get- ?slot)) ?valor)) then 
+        (incrementa-prioridad-recomendacion ?f ?inc)))))
+
+
+
+;;---------------------------------------------------------------------------------------------------------
+;;
+;; A partir de una base de datos de obras, queremos:
+;;   Recomendar un máxímo de 3 obras al usuario -una recomendación es simplemente un par <obra, prioridad>-,
+;;   basándonos en la relación entre sus preferencias y los atributos (o 'slots') de cada obra.
+;;   Esa relación influye en el valor del prioridad de un recomendacion, si el obra correspondiente 
+;;   satisface las preferencias del usuario.
+;;
+;; Naturalmente, algunas preferencias tendrán más peso que otras; por ejemplo la epoca del obra aporta 
+;; más peso a la recomendación que la selección del formato (ebook, tapa-dura, tapa-blanda)
+;;
+;; La edad del visitante también influye, ya que los obras para adultos no se pueden recomendar a los menores
+;;
+;; Hemos agrupado las preferencias en diferentes módulos:
+;;   1 - MAIN
+;;   2 - determina-epoca
+;;   3 - preguntas-edad
+;;   4 - preguntas-epoca
+;;   5 - preguntas-tiempo-complejidad 
+;;   6 - preguntas-formato-longitud
+;;   7 - preguntas-ventas-categoria
+;;   8 - preguntas-autor-obra-favoritos
+;;   9 - imprime-recomendaciones
+;;
+;; El funcionamiento de cada módulo está conentado con más detalle junto al código correspondiente
+;;
+;; Aqui empezamos con el modulo MAIN
+;; En este módulo simplemente inicializamos las recomendaciones
+;; y pasamos al siguiente módulo: elegir las epoca preferida
+;;
+;;---------------------------------------------------------------------------------------------------------
+
+(defmodule MAIN (export ?ALL))
+
+
+
+;;-----------------------------------------------------------------------------------------
+;; Inicializar las recomendaciones con prioridad 0
+;; Regla inicial: para cada instancia de obra, crear el hecho (recomendacion obra prioridad)
+;;-----------------------------------------------------------------------------------------
+(defrule init-recomendaciones
+  (declare (salience 1))
+  ?obra <- (object (is-a Obra))
+  =>
+  (assert (recomendacion (obra ?obra) (prioridad 0))))
+
+
+;; Pasar al modulo de seleccion de epoca
+(defrule siguiente-modulo "Salta al modulo para determinar la epoca"
+  (declare (salience 0))
+  =>
+  (printout t "-------------------------------------------------------" crlf)
+  (printout t "------ Sistema Experto de Recomendación de Obras ------" crlf)
+  (printout t "-------------------------------------------------------" crlf crlf)
+  (assert (epoca (nombre desconocida)))    ;; poner la epoca como desconocida
+  (focus determina-epoca))                 	  ;; pasar al siguiente modulo
+
+
+;;---------------------------------------------------------------------------------
+;;
+;; Aqui empezamos con el modulo de para determinar la epoca del usuario 
+;; 
+;;
+;;---------------------------------------------------------------------------------
+
+(defmodule determina-epoca "Preguntas para determinar epoca"
+  (import MAIN ?ALL)
+  (export ?ALL))
+
+
+;; Determinar la epoca preferida del usuario
+;; Seleccionar una epoca hace que las puntuaciones 
+;;---------------------------------------------
+(defrule pregunta-epoca "¿Qué epoca prefieres? Arte clásico, Medieval, Moderno, Contemporáneo"
+  (declare (salience 5))
+  ?t <- (epoca (nombre desconocida))
+  =>
+  (bind ?response
+    (ask-question "¿Qué epoca prefieres?%n  1 - Arte clásico%n  2 - Medieval%n  3 - Moderno%n  4 - Contemporáneo"
+                  1 2 3 4))
+  (if (eq ?response 1) 
+    then (modify ?t (nombre Arte-clasico))
+         (incrementa-prioridad-obras epoca Arte-clasico 1000))
+  (if (eq ?response 2) 
+    then (modify ?t (nombre Medieval))
+         (incrementa-prioridad-obras epoca Medieval 1000))
+  (if (eq ?response 3) 
+    then (modify ?t (nombre Moderno))
+         (incrementa-prioridad-obras epoca Moderno 1000))
+  (if (eq ?response 4) 
+    then (modify ?t (nombre Contemporaneo))
+         (incrementa-prioridad-obras epoca Contemporaneo 1000)))
