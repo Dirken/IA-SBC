@@ -1,4 +1,4 @@
-; Wed Nov 30 00:00:16 CET 2016
+; Tue Dec 06 21:54:06 CET 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -7,7 +7,48 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot nombre_centro
+	(single-slot apta_menores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot menores
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot relevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creacion
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -15,7 +56,35 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot preferencia
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conocimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre_centro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot periodo_historico
 		(type STRING)
 		(create-accessor read-write))
 	(single-slot n_dias_visita
@@ -26,81 +95,38 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot relevancia
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot duracion_visitas
 ;+		(comment "En horas.")
 		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot conocimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot autor
-		(type INSTANCE)
-;+		(allowed-classes Artista)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot adultos
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sala
-		(type INSTANCE)
-;+		(allowed-classes Sala)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot fecha_creacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot precio
+	(single-slot ancho
 		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot tematica
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot periodo_historico
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot epoca
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot menores
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Obra+de+arte
 	(is-a USER)
 	(role concrete)
-	(single-slot relevancia
-		(type INTEGER)
+	(single-slot apta_menores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autor
@@ -112,11 +138,7 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estilo
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nombre
+	(single-slot periodo_historico
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -125,55 +147,51 @@
 ;+		(allowed-classes Sala)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot tematica
+	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
+	(single-slot relevancia
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot periodo_historico
-		(type STRING)
+	(single-slot ancho
+		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Visitante
 	(is-a USER)
 	(role abstract)
-	(single-slot duracion_visitas
-;+		(comment "En horas.")
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot preferencia
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot n_dias_visita
-		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot conocimiento
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot n_dias_visita
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duracion_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
 		(create-accessor read-write)))
 
 (defclass Familia
 	(is-a Visitante)
 	(role concrete)
-	(single-slot menores
+	(single-slot adultos
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot adultos
+	(single-slot menores
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -201,7 +219,7 @@
 (defclass Grupo+Escolar
 	(is-a Visitante)
 	(role concrete)
-	(single-slot menores
+	(single-slot adultos
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -209,7 +227,7 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot adultos
+	(single-slot menores
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -217,18 +235,18 @@
 (defclass Artista
 	(is-a USER)
 	(role concrete)
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot fecha_nacimiento
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nacionalidad
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -247,7 +265,11 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ancho
+		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))

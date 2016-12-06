@@ -1,4 +1,4 @@
-
+﻿
 
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
@@ -798,4 +798,3 @@
 		(nombre "Velazquez")
 		(periodo_historico "Barroco"))
 )
-
