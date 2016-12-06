@@ -3,7 +3,48 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot nombre_centro
+	(single-slot apta_menores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot adultos
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot menores
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot relevancia
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot epoca
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot autor
+		(type INSTANCE)
+;+		(allowed-classes Artista)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fecha_creacion
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -11,7 +52,35 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot preferencia
+	(single-slot sala
+		(type INSTANCE)
+;+		(allowed-classes Sala)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot conocimiento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre_centro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot periodo_historico
 		(type STRING)
 		(create-accessor read-write))
 	(single-slot n_dias_visita
@@ -22,81 +91,38 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot relevancia
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot duracion_visitas
 ;+		(comment "En horas.")
 		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot conocimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot autor
-		(type INSTANCE)
-;+		(allowed-classes Artista)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot adultos
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sala
-		(type INSTANCE)
-;+		(allowed-classes Sala)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot fecha_creacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot precio
+	(single-slot ancho
 		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot tematica
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot periodo_historico
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot epoca
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot menores
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Obra+de+arte
 	(is-a USER)
 	(role concrete)
-	(single-slot relevancia
-		(type INTEGER)
+	(single-slot apta_menores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estilo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot complejidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tematica
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot autor
@@ -108,11 +134,7 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot estilo
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nombre
+	(single-slot periodo_historico
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -121,55 +143,51 @@
 ;+		(allowed-classes Sala)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot tematica
+	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
+	(single-slot relevancia
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot periodo_historico
-		(type STRING)
+	(single-slot ancho
+		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Visitante
 	(is-a USER)
 	(role abstract)
-	(single-slot duracion_visitas
-;+		(comment "En horas.")
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot preferencia
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot n_dias_visita
-		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot conocimiento
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot n_dias_visita
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot duracion_visitas
+;+		(comment "En horas.")
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot preferencia
+		(type STRING)
 		(create-accessor read-write)))
 
 (defclass Familia
 	(is-a Visitante)
 	(role concrete)
-	(single-slot menores
+	(single-slot adultos
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot adultos
+	(single-slot menores
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -197,7 +215,7 @@
 (defclass Grupo+Escolar
 	(is-a Visitante)
 	(role concrete)
-	(single-slot menores
+	(single-slot adultos
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -205,7 +223,7 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot adultos
+	(single-slot menores
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
@@ -213,18 +231,18 @@
 (defclass Artista
 	(is-a USER)
 	(role concrete)
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot fecha_nacimiento
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot estilo
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot nacionalidad
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -243,8 +261,12 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
+	(single-slot alto
+		(type FLOAT)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ancho
+		(type FLOAT)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
@@ -252,9 +274,11 @@
 	
 	([Adan] of  Obra+de+arte
 	
+		(alto 209.0)
+		(ancho 81.0)
+		(apta_menores FALSE)
 		(autor [Durero])
-		(complejidad "1")
-		(dimensiones "209 cm x 81 cm")
+		(complejidad "Alta")
 		(estilo "Renacimiento")
 		(fecha_creacion "1507")
 		(nombre "Adan")
@@ -265,9 +289,11 @@
 	
 	([Autorretrato] of  Obra+de+arte
 	
+		(alto 52.0)
+		(ancho 41.0)
+		(apta_menores TRUE)
 		(autor [Durero])
 		(complejidad "Alta")
-		(dimensiones "52 cm x 41 cm")
 		(estilo "Renacimiento")
 		(fecha_creacion "1498")
 		(nombre "Autorretrato")
@@ -300,9 +326,11 @@
 	
 	([Caza+con+reclamo] of  Obra+de+arte
 	
+		(alto 112.0)
+		(ancho 179.0)
+		(apta_menores TRUE)
 		(autor [Goya])
-		(complejidad "2")
-		(dimensiones "112 cm x 174 cm")
+		(complejidad "Media")
 		(estilo "Rococo")
 		(fecha_creacion "1775")
 		(nombre "Caza con reclamo")
@@ -313,9 +341,11 @@
 	
 	([David+vencedor+de+Goliath] of  Obra+de+arte
 	
+		(alto 110.4)
+		(ancho 91.3)
+		(apta_menores TRUE)
 		(autor [Caravaggio])
 		(complejidad "Alta")
-		(dimensiones "1,1 m x 91 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1599")
 		(nombre "David vencedor de Goliath")
@@ -335,9 +365,10 @@
 	
 	([El+3+de+Mayo+de+1808] of  Obra+de+arte
 	
+		(alto 268.0)
+		(ancho 347.0)
 		(autor [Goya])
 		(complejidad "Muy alta")
-		(dimensiones "2,68 m x 3,47 m")
 		(estilo "Prerromanticismo")
 		(fecha_creacion "1814")
 		(nombre "El 3 de Mayo de 1808")
@@ -348,9 +379,11 @@
 	
 	([El+embarco+de+Santa+Paula+Romana] of  Obra+de+arte
 	
+		(alto 211.0)
+		(ancho 145.0)
+		(apta_menores TRUE)
 		(autor [Lorena])
 		(complejidad "Muy alta")
-		(dimensiones "211 cm x 145 cm")
 		(estilo "Clacisismo")
 		(fecha_creacion "1639-1640")
 		(nombre "El embarco de Santa Paula Romana")
@@ -361,9 +394,11 @@
 	
 	([El+jardin+de+las+delicias] of  Obra+de+arte
 	
+		(alto 205.6)
+		(ancho 386.0)
+		(apta_menores TRUE)
 		(autor [Bosco])
 		(complejidad "Muy alta")
-		(dimensiones "2,2 m x 3,89 m")
 		(estilo "Gotico")
 		(fecha_creacion "1503-1515")
 		(nombre "El jardin de las delicias")
@@ -374,21 +409,25 @@
 	
 	([El+juicio+de+Paris] of  Obra+de+arte
 	
+		(alto 199.0)
+		(ancho 381.0)
 		(autor [Rubens])
-		(complejidad "4")
-		(dimensiones "199 cm x 379 cm")
+		(complejidad "Muy alta")
 		(estilo "Barroco")
-		(fecha_creacion "1639")
+		(fecha_creacion "1638")
 		(nombre "El juicio de Paris")
 		(periodo_historico "Barroco")
+		(relevancia 4)
 		(sala [Sala+B])
 		(tematica "Pintura de historia"))
 	
 	([Eva] of  Obra+de+arte
 	
+		(alto 209.0)
+		(ancho 80.0)
+		(apta_menores FALSE)
 		(autor [Durero])
-		(complejidad "1")
-		(dimensiones "209 cm x 80 cm")
+		(complejidad "Media")
 		(estilo "Renacimiento")
 		(fecha_creacion "1507")
 		(nombre "Eva")
@@ -502,9 +541,11 @@
 	
 	([La+Crucifixion] of  Obra+de+arte
 	
+		(alto 312.0)
+		(ancho 169.0)
+		(apta_menores TRUE)
 		(autor [Greco])
 		(complejidad "Alta")
-		(dimensiones "312 cm x 169 cm")
 		(estilo "Manierismo")
 		(fecha_creacion "1597-1600")
 		(nombre "La Crucifixion")
@@ -515,9 +556,11 @@
 	
 	([La+huida+a+Egipto] of  Obra+de+arte
 	
+		(alto 15.9)
+		(ancho 21.6)
+		(apta_menores TRUE)
 		(autor [Greco])
-		(complejidad "2")
-		(dimensiones "15,9 cm x 21,6 cm")
+		(complejidad "Alta")
 		(estilo "Manierismo")
 		(fecha_creacion "1570")
 		(nombre "La huida a Egipto")
@@ -528,9 +571,11 @@
 	
 	([La+venerable+madre+Jeronima+de+la+Fuente] of  Obra+de+arte
 	
+		(alto 160.0)
+		(ancho 110.0)
+		(apta_menores TRUE)
 		(autor [Velazquez])
 		(complejidad "Media")
-		(dimensiones "160 cm x 110 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1620")
 		(nombre "La venerable madre Jeronima de la Fuente")
@@ -541,9 +586,11 @@
 	
 	([Las+Meninas] of  Obra+de+arte
 	
+		(alto 318.0)
+		(ancho 276.0)
+		(apta_menores TRUE)
 		(autor [Velazquez])
 		(complejidad "Alta")
-		(dimensiones "318 cm x 276 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1656")
 		(nombre "Las Meninas")
@@ -554,9 +601,10 @@
 	
 	([Las+Tres+Gracias] of  Obra+de+arte
 	
+		(alto 221.0)
+		(ancho 181.0)
 		(autor [Rubens])
 		(complejidad "Alta")
-		(dimensiones "221 cm x 181 cm")
 		(estilo "Barroco")
 		(fecha_creacion "1636-1639")
 		(nombre "Las Tres Gracias")
@@ -580,9 +628,10 @@
 	
 	([Mesa+de+los+Pecados+Capitales] of  Obra+de+arte
 	
+		(alto 119.5)
+		(ancho 139.8)
 		(autor [Bosco])
-		(complejidad "5")
-		(dimensiones "119,5 cm x 139,5 cm.")
+		(complejidad "Media")
 		(estilo "Gotico")
 		(fecha_creacion "1505 - 1510")
 		(nombre "Mesa de los Pecados Capitales")
@@ -627,9 +676,11 @@
 	
 	([Perros+en+trailla] of  Obra+de+arte
 	
+		(alto 112.0)
+		(ancho 174.0)
+		(apta_menores TRUE)
 		(autor [Goya])
-		(complejidad "2")
-		(dimensiones "112 cm x 174 cm")
+		(complejidad "Media")
 		(estilo "Rococo")
 		(fecha_creacion "1775")
 		(nombre "Perros en trailla")
@@ -640,9 +691,11 @@
 	
 	([Retrato+de+hombre] of  Obra+de+arte
 	
+		(alto 55.5)
+		(ancho 38.0)
+		(apta_menores TRUE)
 		(autor [Velazquez])
 		(complejidad "Media")
-		(dimensiones "55,5 cm x 38 cm")
 		(estilo "Barroco")
 		(fecha_creacion "hacia 1623")
 		(nombre "Retrato de hombre")
@@ -653,9 +706,11 @@
 	
 	([Retrato+ecuestre+del+duque+de+Lerma] of  Obra+de+arte
 	
+		(alto 290.5)
+		(ancho 207.5)
+		(apta_menores TRUE)
 		(autor [Rubens])
-		(complejidad "3")
-		(dimensiones "290,5 cm x 207,5 cm")
+		(complejidad "Alta")
 		(estilo "Barroco")
 		(fecha_creacion "1603")
 		(nombre "Retrato ecuestre del duque de Lerma")
@@ -677,34 +732,40 @@
 	
 	([Sala+A] of  Sala
 	
-		(dimensiones "4 m x 5 m")
+		(alto 400.0)
+		(ancho 810.0)
 		(nombre "Sala A"))
 	
 	([Sala+B] of  Sala
 	
-		(dimensiones "6 m x 8 m")
+		(alto 1500.0)
+		(ancho 700.0)
 		(nombre "Sala B"))
 	
 	([Sala+C] of  Sala
 	
-		(dimensiones "12 m x 24 m")
+		(alto 700.0)
+		(ancho 500.0)
 		(nombre "Sala C"))
 	
 	([Sala+D] of  Sala
 	
-		(dimensiones "14 m x 7 m")
+		(alto 2000.0)
+		(ancho 1000.0)
 		(nombre "Sala D"))
 	
 	([Sala+E] of  Sala
 	
-		(dimensiones "4 m x 9 m")
+		(alto 4000.0)
+		(ancho 4000.0)
 		(nombre "Sala E"))
 	
 	([Saturno+devorando+a+un+hijo] of  Obra+de+arte
 	
+		(alto 146.0)
+		(ancho 83.0)
 		(autor [Goya])
 		(complejidad "Alta")
-		(dimensiones "1,43 m x 81 cm")
 		(estilo "Romanticismo")
 		(fecha_creacion "1819-1823")
 		(nombre "Saturno devorando a un hijo")
@@ -715,9 +776,11 @@
 	
 	([Triptico+de+la+Adoracion+de+los+Magos] of  Obra+de+arte
 	
+		(alto 138.0)
+		(ancho 72.0)
+		(apta_menores TRUE)
 		(autor [Bosco])
-		(complejidad "4")
-		(dimensiones "138 cm x 72 cm")
+		(complejidad "Media")
 		(estilo "Gotico")
 		(fecha_creacion "1485-1500")
 		(nombre "Triptico de la Adoracion de los Magos")
@@ -735,3 +798,4 @@
 		(nombre "Velazquez")
 		(periodo_historico "Barroco"))
 )
+
