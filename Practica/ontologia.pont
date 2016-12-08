@@ -1,0 +1,305 @@
+; Wed Dec 07 18:41:31 CET 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot inverse_of_Obras
+		(type INSTANCE)
+;+		(allowed-classes ObraDeArte)
+		(create-accessor read-write))
+	(single-slot Autorretrato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DiasVisita
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Epoca
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Cristo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Preferencias
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Mayor18
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Sala
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DuracionVisita
+		(type INTEGER)
+		(range 0 15)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot NombreObra
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot KB_388996_Class18
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Muerte
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Frutas
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tipo
+		(type SYMBOL)
+		(allowed-values Individuo Familia GrupoPequenyo GrupoGrande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Violento
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Dimensiones
+		(type SYMBOL)
+		(allowed-values Pequenyo Mediano Grande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ConocimientoArte
+		(type SYMBOL)
+		(allowed-values Bajo Medio Alto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot AnyoCreacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Complejidad
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Eden
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Flores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Estilo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Obras
+		(type INSTANCE)
+;+		(allowed-classes ObraDeArte)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot Famoso
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass ObraDeArte
+	(is-a USER)
+	(role concrete)
+	(single-slot Complejidad
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Dimensiones
+		(type SYMBOL)
+		(allowed-values Pequenyo Mediano Grande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Estilo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Sala
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Mayor18
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot AnyoCreacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Epoca
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Religioso
+	(is-a ObraDeArte)
+	(role concrete)
+	(single-slot Cristo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Eden
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Retrato
+	(is-a ObraDeArte)
+	(role concrete))
+
+(defclass Personas
+	(is-a Retrato)
+	(role concrete)
+	(single-slot Autorretrato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Famoso
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Otros
+	(is-a Retrato)
+	(role concrete)
+	(single-slot Frutas
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Flores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Belico
+	(is-a ObraDeArte)
+	(role concrete)
+	(single-slot Violento
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Muerte
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Pintor
+	(is-a USER)
+	(role concrete)
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Estilo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Obras
+		(type INSTANCE)
+;+		(allowed-classes ObraDeArte)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot Epoca
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Visitante
+	(is-a USER)
+	(role concrete)
+	(single-slot DuracionVisita
+		(type INTEGER)
+		(range 0 15)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DiasVisita
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Preferencias
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tipo
+		(type SYMBOL)
+		(allowed-values Individuo Familia GrupoPequenyo GrupoGrande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ConocimientoArte
+		(type SYMBOL)
+		(allowed-values Bajo Medio Alto)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))

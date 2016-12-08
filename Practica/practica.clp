@@ -1,491 +1,410 @@
+; Wed Dec 07 18:41:31 CET 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+;;---------------------------------------------------------
+;;
+;; PONT
+;;
+;;---------------------------------------------------------
+
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot fecha_nacimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot preferencia
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot n_dias_visita
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot numero_visita
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot relevancia
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot duracion_visitas
-;+		(comment "En horas.")
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot conocimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot autor
+	(multislot inverse_of_Obras
 		(type INSTANCE)
-;+		(allowed-classes Artista)
-;+		(cardinality 0 1)
+;+		(allowed-classes ObraDeArte)
 		(create-accessor read-write))
-	(single-slot adultos
+	(single-slot Autorretrato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DiasVisita
 		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Epoca
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Cristo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Preferencias
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Mayor18
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Sala
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DuracionVisita
+		(type INTEGER)
+		(range 0 15)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot NombreObra
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot KB_388996_Class18
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot sala
+	(single-slot Muerte
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Frutas
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tipo
+		(type SYMBOL)
+		(allowed-values Individuo Familia GrupoPequenyo GrupoGrande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Violento
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Dimensiones
+		(type SYMBOL)
+		(allowed-values Pequenyo Mediano Grande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tematica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ConocimientoArte
+		(type SYMBOL)
+		(allowed-values Bajo Medio Alto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot AnyoCreacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Complejidad
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Eden
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Flores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Estilo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Obras
 		(type INSTANCE)
-;+		(allowed-classes Sala)
-;+		(cardinality 0 1)
+;+		(allowed-classes ObraDeArte)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
-	(single-slot fecha_creacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot precio
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot tematica
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot periodo_historico
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot epoca
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot menores
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot Famoso
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Obras+de+arte
+(defclass ObraDeArte
 	(is-a USER)
 	(role concrete)
-	(single-slot relevancia
+	(single-slot Complejidad
 		(type INTEGER)
-;+		(cardinality 0 1)
+		(range 0 10)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot autor
-		(type INSTANCE)
-;+		(allowed-classes Artista)
-;+		(cardinality 0 1)
+	(single-slot Dimensiones
+		(type SYMBOL)
+		(allowed-values Pequenyo Mediano Grande)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot fecha_creacion
+	(single-slot Autor
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot estilo
+	(single-slot Estilo
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot nombre
+	(single-slot Sala
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot sala
-		(type INSTANCE)
-;+		(allowed-classes Sala)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot tematica
+	(single-slot Nombre
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot Mayor18
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot complejidad
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot AnyoCreacion
+		(type INTEGER)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot periodo_historico
+	(single-slot Epoca
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Relevancia
+		(type INTEGER)
+		(range 0 10)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Visitantes
-	(is-a USER)
-	(role abstract)
-	(single-slot duracion_visitas
-;+		(comment "En horas.")
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot precio
-		(type FLOAT)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot preferencia
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot n_dias_visita
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot conocimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot numero_visita
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
-
-(defclass Familia
-	(is-a Visitantes)
+(defclass Religioso
+	(is-a ObraDeArte)
 	(role concrete)
-	(single-slot menores
-		(type INTEGER)
-;+		(cardinality 0 1)
+	(single-slot Cristo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot adultos
-		(type INTEGER)
-;+		(cardinality 0 1)
+	(single-slot Eden
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Grupo+normal
-	(is-a Visitantes)
-	(role concrete)
-	(single-slot adultos
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
-
-(defclass Persona
-	(is-a Visitantes)
+(defclass Retrato
+	(is-a ObraDeArte)
 	(role concrete))
 
-(defclass Grupo+grande
-	(is-a Visitantes)
+(defclass Personas
+	(is-a Retrato)
 	(role concrete)
-	(single-slot adultos
+	(single-slot Autorretrato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Famoso
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Otros
+	(is-a Retrato)
+	(role concrete)
+	(single-slot Frutas
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Flores
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Belico
+	(is-a ObraDeArte)
+	(role concrete)
+	(single-slot Violento
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Muerte
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Pintor
+	(is-a USER)
+	(role concrete)
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Autor
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Estilo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot Obras
+		(type INSTANCE)
+;+		(allowed-classes ObraDeArte)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot Epoca
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Visitante
+	(is-a USER)
+	(role concrete)
+	(single-slot DuracionVisita
 		(type INTEGER)
-;+		(cardinality 0 1)
+		(range 0 15)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot DiasVisita
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Preferencias
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tipo
+		(type SYMBOL)
+		(allowed-values Individuo Familia GrupoPequenyo GrupoGrande)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ConocimientoArte
+		(type SYMBOL)
+		(allowed-values Bajo Medio Alto)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Artista
-	(is-a USER)
-	(role concrete)
-	(multislot estilo
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot fecha_nacimiento
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot periodo_historico
-		(type STRING)
-		(create-accessor read-write))
-	(single-slot epoca
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
-
-(defclass Sala
-	(is-a USER)
-	(role concrete)
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot dimensiones
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
+;;---------------------------------------------------------
+;;
+;; PINS
+;;
+;;---------------------------------------------------------
 
 (definstances instances
-	([Autorretrato] of  Obras+de+arte
+	([KB_388996_Class19] of  ObraDeArte
 
-		(autor [Durero])
-		(complejidad "Alta")
-		(dimensiones "52 cm × 41 cm")
-		(estilo "Renacimiento")
-		(fecha_creacion "1498")
-		(nombre "Autorretrato")
-		(periodo_historico "Renacimiento nórdico")
-		(relevancia 1)
-		(sala [Sala+C])
-		(tematica "Autorretrato"))
+		(AnyoCreacion 5)
+		(Autor "a")
+		(Complejidad 5)
+		(Dimensiones Mediano)
+		(Epoca "a")
+		(Estilo "a")
+		(Mayor18 TRUE)
+		(Nombre "a")
+		(Relevancia 5)
+		(Sala "a"))
 
-	([Bosco] of  Artista
+	([KB_388996_Class20] of  Pintor
 
-		(epoca "Renacimiento")
-		(estilo "naturalista")
-		(fecha_nacimiento "1450")
-		(nacionalidad "Paises Bajos")
-		(nombre "Bosco")
-		(periodo_historico
-			"Pintura flamenca"
-			"Renacimiento"))
+		(Autor "a")
+		(Epoca "a")
+		(Estilo "a")
+		(Nacionalidad "a")
+		(Nombre "a")
+		(Obras [KB_388996_Class19]))
 
-	([Caravaggio] of  Artista
+	([KB_388996_Class21] of  Visitante
 
-		(epoca "Barroco-Renacentista")
-		(estilo "naturalista")
-		(fecha_nacimiento "1571")
-		(nacionalidad "Romana")
-		(nombre "Caravaggio")
-		(periodo_historico
-			"Barroco"
-			"Renacimiento"))
+		(ConocimientoArte Medio)
+		(DiasVisita 1)
+		(DuracionVisita 2)
+		(Preferencias "a")
+		(Tipo Individuo))
 
-	([David+vencedor+de+Goliath] of  Obras+de+arte
+	([KB_388996_Class22] of  Religioso
 
-		(autor [Caravaggio])
-		(complejidad "Alta")
-		(dimensiones "1,1 m x 91 cm")
-		(estilo "Barroco")
-		(fecha_creacion "1599")
-		(nombre "David vencedor de Goliath")
-		(periodo_historico "Barroco")
-		(relevancia 2)
-		(sala [Sala+D])
-		(tematica "Arte cristiano"))
+		(AnyoCreacion 5)
+		(Autor "a")
+		(Complejidad 5)
+		(Cristo TRUE)
+		(Dimensiones Pequenyo)
+		(Eden FALSE)
+		(Epoca "a")
+		(Estilo "a")
+		(Mayor18 TRUE)
+		(Nombre "a")
+		(Relevancia 5)
+		(Sala "a"))
 
-	([Durero] of  Artista
+	([KB_388996_Class23] of  Personas
 
-		(epoca "Renacimiento")
-		(estilo "naturalista")
-		(fecha_nacimiento "1471")
-		(nacionalidad "Alemana")
-		(nombre "Durero")
-		(periodo_historico "Alto Renacimiento"))
+		(AnyoCreacion 13131)
+		(Autor "c")
+		(Autorretrato FALSE)
+		(Complejidad 4)
+		(Dimensiones Grande)
+		(Epoca "c")
+		(Estilo "a")
+		(Famoso TRUE)
+		(Mayor18 FALSE)
+		(Nombre "adafadfgaf")
+		(Relevancia 10)
+		(Sala "c"))
 
-	([El+3+de+Mayo+de+1808] of  Obras+de+arte
+	([KB_388996_Class24] of  Otros
 
-		(autor [Goya])
-		(complejidad "Muy alta")
-		(dimensiones "2,68 m x 3,47 m")
-		(estilo "Prerromanticismo")
-		(fecha_creacion "1814")
-		(nombre "El 3 de Mayo de 1808")
-		(periodo_historico "Romanticismo")
-		(relevancia 4)
-		(sala [Sala+A])
-		(tematica "Pintura de historia"))
+		(AnyoCreacion 15)
+		(Autor "marin")
+		(Complejidad 0)
+		(Dimensiones Grande)
+		(Epoca "cabonr")
+		(Estilo "friendzone")
+		(Flores TRUE)
+		(Frutas TRUE)
+		(Mayor18 TRUE)
+		(Nombre ".l.")
+		(Relevancia 0)
+		(Sala "joputa"))
 
-	([El+embarco+de+Santa+Paula+Romana] of  Obras+de+arte
+	([KB_388996_Class25] of  Belico
 
-		(autor [Lorena])
-		(complejidad "Muy alta")
-		(dimensiones "211 cm x 145 cm")
-		(estilo "Clacisismo")
-		(fecha_creacion "1639-1640")
-		(nombre "El embarco de Santa Paula Romana")
-		(periodo_historico "Barroco")
-		(relevancia 2)
-		(sala [Sala+D])
-		(tematica "Paisaje"))
-
-	([El+jard%C3%ADn+de+las+delicias] of  Obras+de+arte
-
-		(autor [Bosco])
-		(complejidad "Muy alta")
-		(dimensiones "2,2 m x 3,89 m")
-		(estilo "Gótico")
-		(fecha_creacion "1503-1515")
-		(nombre "El jardín de las delicias")
-		(periodo_historico "Renacimiento nórdico")
-		(relevancia 1)
-		(sala [Sala+B])
-		(tematica "Arte cristiano"))
-
-	([Goya] of  Artista
-
-		(epoca "Romanticismo")
-		(estilo
-			"Barroco"
-			"Neoclasico")
-		(fecha_nacimiento "1828")
-		(nacionalidad "Francesa")
-		(nombre "Goya")
-		(periodo_historico "Romanticismo"))
-
-	([Greco] of  Artista
-
-		(epoca "Renacimiento")
-		(fecha_nacimiento "1541")
-		(nacionalidad "Griega")
-		(nombre "Greco")
-		(periodo_historico "Renacimiento"))
-
-	([La+Crucifixi%C3%B3n] of  Obras+de+arte
-
-		(autor [Greco])
-		(complejidad "Alta")
-		(dimensiones "312 cm × 169 cm")
-		(estilo "Manierismo")
-		(fecha_creacion "1597-1600")
-		(nombre "La Crucifixión")
-		(periodo_historico "Alto Renacimiento")
-		(relevancia 2)
-		(sala [Sala+C])
-		(tematica "Arte cristiano"))
-
-	([Las+meninas] of  Obras+de+arte
-
-		(autor [Vel%C3%A1zquez])
-		(complejidad "Alta")
-		(dimensiones "318 cm × 276 cm")
-		(estilo "Barroco")
-		(fecha_creacion "1656")
-		(nombre "Las meninas")
-		(periodo_historico "Barroco")
-		(relevancia 3)
-		(sala [Sala+A])
-		(tematica "Retrato"))
-
-	([Las+Tres+Gracias] of  Obras+de+arte
-
-		(autor [Rubens])
-		(complejidad "Alta")
-		(dimensiones "221 cm × 181 cm")
-		(estilo "Barroco")
-		(fecha_creacion "1636-1639")
-		(nombre "Las Tres Gracias")
-		(periodo_historico "Barroco")
-		(relevancia 1)
-		(sala [Sala+E])
-		(tematica "Pintura de historia"))
-
-	([Lorena] of  Artista
-
-		(epoca "Barroco")
-		(fecha_nacimiento "1600")
-		(nacionalidad "Francesa")
-		(nombre "Lorena")
-		(periodo_historico
-			"Barroco"
-			"Renacimiento"))
-
-	([Ontologia_Class13] of  Familia
-
-		(adultos 2)
-		(conocimiento "Nada")
-		(duracion_visitas 1.5)
-		(menores 2)
-		(n_dias_visita 2)
-		(numero_visita "F001")
-		(precio 15.0))
-
-	([Ontologia_Class15] of  Grupo+grande
-
-		(adultos 5)
-		(conocimiento "Nada")
-		(duracion_visitas 3.0)
-		(n_dias_visita 3)
-		(numero_visita "GG001")
-		(precio 40.0))
-
-	([Ontologia_Class16] of  Grupo+normal
-
-		(adultos 2)
-		(conocimiento "Nada")
-		(duracion_visitas 1.5)
-		(n_dias_visita 1)
-		(numero_visita "GP001")
-		(precio 20.0))
-
-	([Ontologia_Class17] of  Persona
-
-		(conocimiento "Nada")
-		(duracion_visitas 2.5)
-		(n_dias_visita 2)
-		(numero_visita "P001")
-		(precio 5.0))
-
-	([Rubens] of  Artista
-
-		(epoca "Barroco")
-		(fecha_nacimiento "1577")
-		(nacionalidad "Alemana")
-		(nombre "Rubens")
-		(periodo_historico
-			"Barroco"
-			"Escuela de Amberes"))
-
-	([Sala+A] of  Sala
-
-		(dimensiones "4 m x 5 m")
-		(nombre "Sala A"))
-
-	([Sala+B] of  Sala
-
-		(dimensiones "6 m x 8 m")
-		(nombre "Sala B"))
-
-	([Sala+C] of  Sala
-
-		(dimensiones "12 m x 24 m")
-		(nombre "Sala C"))
-
-	([Sala+D] of  Sala
-
-		(dimensiones "14 m x 7 m")
-		(nombre "Sala D"))
-
-	([Sala+E] of  Sala
-
-		(dimensiones "4 m x 9 m")
-		(nombre "Sala E"))
-
-	([Saturno+devorando+a+un+hijo] of  Obras+de+arte
-
-		(autor [Goya])
-		(complejidad "Alta")
-		(dimensiones "1,43 m x 81 cm")
-		(estilo "Romanticismo")
-		(fecha_creacion "1819-1823")
-		(nombre "Saturno devorando a un hijo")
-		(periodo_historico "Renacimiento")
-		(relevancia 3)
-		(sala [Sala+C])
-		(tematica "Crono"))
-
-	([Vel%C3%A1zquez] of  Artista
-
-		(estilo "naturalista")
-		(fecha_nacimiento "1599")
-		(nacionalidad "Española")
-		(nombre "Velázquez")
-		(periodo_historico "Barroco"))
+		(AnyoCreacion 1994)
+		(Autor "hahahahah")
+		(Complejidad 10)
+		(Dimensiones Grande)
+		(Epoca "sí")
+		(Estilo "puño")
+		(Mayor18 TRUE)
+		(Muerte TRUE)
+		(Nombre "asdf")
+		(Relevancia 0)
+		(Sala "easy")
+		(Violento TRUE))
 )
 
 
@@ -496,7 +415,7 @@
 ;;---------------------------------------------------------
 
 (deftemplate recomendacion
-     (slot Obras+de+arte)
+     (slot ObraDeArte)
      (slot prioridad))
 
 
@@ -604,21 +523,21 @@
 (deffunction incrementa-prioridad-obras (?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
-      (if (eq (send ?Obras+de+arte (sym-cat get- ?slot)) ?valor) then 
+      (bind ?ObraDeArte (fact-slot-value ?f ObraDeArte))
+      (if (eq (send ?ObraDeArte (sym-cat get- ?slot)) ?valor) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
 ;;-------------------------------------------------------------
-;; Incrementa el prioridad de todas las recomandaciones cuyo Obras+de+arte
+;; Incrementa el prioridad de todas las recomandaciones cuyo ObraDeArte
 ;; tiene el multislot ?slot con valor igual que ?valor
 ;; El incremento de prioridad será de ?inc
 ;;-------------------------------------------------------------
 (deffunction incrementa-prioridad-obras-lista (?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
-      (if (member ?valor (send ?Obras+de+arte (sym-cat get- ?slot))) then 
+      (bind ?ObraDeArte (fact-slot-value ?f ObraDeArte))
+      (if (member ?valor (send ?ObraDeArte (sym-cat get- ?slot))) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
@@ -631,10 +550,10 @@
 (deffunction incrementa-prioridad-obras-epoca (?epoca ?slot ?valor ?inc)
   (progn$ (?f (get-fact-list)) 
     (if (eq (fact-relation ?f) recomendacion) then 
-      (bind ?Obras+de+arte (fact-slot-value ?f Obras+de+arte))
+      (bind ?ObraDeArte (fact-slot-value ?f ObraDeArte))
       (if (and
-        (eq (send ?Obras+de+arte get-epoca) ?epoca)
-        (eq (send ?Obras+de+arte (sym-cat get- ?slot)) ?valor)) then 
+        (eq (send ?ObraDeArte get-epoca) ?epoca)
+        (eq (send ?ObraDeArte (sym-cat get- ?slot)) ?valor)) then 
         (incrementa-prioridad-recomendacion ?f ?inc)))))
 
 
@@ -681,9 +600,9 @@
 ;;-----------------------------------------------------------------------------------------
 (defrule init-recomendaciones
   (declare (salience 1))
-  ?Obras+de+arte <- (object (is-a Obras+de+arte))
+  ?ObraDeArte <- (object (is-a ObraDeArte))
   =>
-  (assert (recomendacion (Obras+de+arte ?Obras+de+arte) (prioridad 0))))
+  (assert (recomendacion (ObraDeArte ?ObraDeArte) (prioridad 0))))
 
 
 ;; Pasar al modulo de seleccion de epoca

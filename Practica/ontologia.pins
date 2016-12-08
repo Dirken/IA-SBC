@@ -1,0 +1,94 @@
+; Wed Dec 07 18:41:31 CET 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([KB_388996_Class19] of  ObraDeArte
+
+	(AnyoCreacion 5)
+	(Autor "a")
+	(Complejidad 5)
+	(Dimensiones Mediano)
+	(Epoca "a")
+	(Estilo "a")
+	(Mayor18 TRUE)
+	(Nombre "a")
+	(Relevancia 5)
+	(Sala "a"))
+
+([KB_388996_Class20] of  Pintor
+
+	(Autor "a")
+	(Epoca "a")
+	(Estilo "a")
+	(Nacionalidad "a")
+	(Nombre "a")
+	(Obras [KB_388996_Class19]))
+
+([KB_388996_Class21] of  Visitante
+
+	(ConocimientoArte Medio)
+	(DiasVisita 1)
+	(DuracionVisita 2)
+	(Preferencias "a")
+	(Tipo Individuo))
+
+([KB_388996_Class22] of  Religioso
+
+	(AnyoCreacion 5)
+	(Autor "a")
+	(Complejidad 5)
+	(Cristo TRUE)
+	(Dimensiones Pequenyo)
+	(Eden FALSE)
+	(Epoca "a")
+	(Estilo "a")
+	(Mayor18 TRUE)
+	(Nombre "a")
+	(Relevancia 5)
+	(Sala "a"))
+
+([KB_388996_Class23] of  Personas
+
+	(AnyoCreacion 13131)
+	(Autor "c")
+	(Autorretrato FALSE)
+	(Complejidad 4)
+	(Dimensiones Grande)
+	(Epoca "c")
+	(Estilo "a")
+	(Famoso TRUE)
+	(Mayor18 FALSE)
+	(Nombre "adafadfgaf")
+	(Relevancia 10)
+	(Sala "c"))
+
+([KB_388996_Class24] of  Otros
+
+	(AnyoCreacion 15)
+	(Autor "marin")
+	(Complejidad 0)
+	(Dimensiones Grande)
+	(Epoca "cabonr")
+	(Estilo "friendzone")
+	(Flores TRUE)
+	(Frutas TRUE)
+	(Mayor18 TRUE)
+	(Nombre ".l.")
+	(Relevancia 0)
+	(Sala "joputa"))
+
+([KB_388996_Class25] of  Belico
+
+	(AnyoCreacion 1994)
+	(Autor "hahahahah")
+	(Complejidad 10)
+	(Dimensiones Grande)
+	(Epoca "sí")
+	(Estilo "puño")
+	(Mayor18 TRUE)
+	(Muerte TRUE)
+	(Nombre "asdf")
+	(Relevancia 0)
+	(Sala "easy")
+	(Violento TRUE))
