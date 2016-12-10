@@ -1,4 +1,4 @@
-; Wed Dec 07 18:41:31 CET 2016
+; Fri Dec 09 17:07:57 CET 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -10,11 +10,6 @@
 	(multislot inverse_of_Obras
 		(type INSTANCE)
 ;+		(allowed-classes ObraDeArte)
-		(create-accessor read-write))
-	(single-slot Autorretrato
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot DiasVisita
 		(type INTEGER)
@@ -97,6 +92,11 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot Autorretrato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot ConocimientoArte
 		(type SYMBOL)
 		(allowed-values Bajo Medio Alto)
@@ -121,9 +121,9 @@
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Estilo
+	(multislot Estilo
 		(type STRING)
-;+		(cardinality 1 1)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot Nombre
 		(type STRING)
@@ -154,12 +154,13 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Autor
-		(type STRING)
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Estilo
+	(multislot Estilo
 		(type STRING)
-;+		(cardinality 1 1)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot Sala
 		(type STRING)
@@ -185,6 +186,11 @@
 	(single-slot Relevancia
 		(type INTEGER)
 		(range 0 10)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Tematica
+		(type SYMBOL)
+		(allowed-values Belico Religioso RetratoOtros RetratoPersonas Paisaje)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
@@ -255,13 +261,9 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Autor
+	(multislot Estilo
 		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot Estilo
-		(type STRING)
-;+		(cardinality 1 1)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot Nombre
 		(type STRING)

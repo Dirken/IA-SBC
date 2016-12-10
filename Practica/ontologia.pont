@@ -154,8 +154,9 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Autor
-		(type STRING)
-;+		(cardinality 1 1)
+		(type INSTANCE)
+;+		(allowed-classes Pintor)
+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Estilo
 		(type STRING)
@@ -255,13 +256,9 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Autor
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot Estilo
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot Nombre
 		(type STRING)
