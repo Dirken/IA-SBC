@@ -1395,7 +1395,7 @@
   (declare (salience 10))
   =>
   (bind ?response
-    (ask-question "¿Cuales de estos artistas te gustaria ver?%n  1 - Velázquez%n  2 - Greco%n  2 - Durero%n  2 - Ninguno en especial"
+    (ask-question "¿Cuales de estos artistas te gustaria ver?%n  1 - Velázquez%n  2 - Greco%n  3 - Durero%n  4 - Ninguno en especial"
                   1 2 3 4))
   (if (eq ?response 1) 
     then (incrementa-prioridad-obras Autor [Velazquez] 100))
