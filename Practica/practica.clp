@@ -1830,7 +1830,7 @@
 
     ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
     ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
-    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) "con prioridad: " ?prioridad ", con sala: " (send ?obra get-Sala)  crlf)
     (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
 
 
@@ -1917,7 +1917,7 @@
 
     ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
     ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
-    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) "con prioridad: " ?prioridad ", con sala: " (send ?obra get-Sala)  crlf)
     (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
 
 ;-------------------------------
@@ -2003,7 +2003,7 @@
 
     ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
     ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
-    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) "con prioridad: " ?prioridad ", con sala: " (send ?obra get-Sala)  crlf)
     (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
 
 
@@ -2083,5 +2083,7 @@
    =>
    (retract ?u)                                                                                  
 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) "con prioridad: " ?prioridad ", con sala: " (send ?obra get-Sala)  crlf)
    (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
+
+ 
