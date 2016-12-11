@@ -3,6 +3,8 @@
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
+
+; (load /Users/Eironeia/Documents/Universitat/IA/IA-SBC/Practica/practica.clp)
 ;;---------------------------------------------------------
 ;;
 ;; PONT
@@ -43,7 +45,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Sala
-		(type STRING)
+		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Relevancia
@@ -324,7 +326,7 @@
 ;;---------------------------------------------------------------------
 ;;---------------------------------------------------------------------
 
-([El+embarco+de+Santa+Paula+Romana] of  ObraDeArte
+([El+embarco+de+Santa+Paula+Romana] of ObraDeArte
 
 	(AnyoCreacion 1640)
 	(Autor [Lorena])
@@ -335,7 +337,7 @@
 	(Mayor18 FALSE)
 	(Nombre "El embarco de Santa Paula Romana")
 	(Relevancia 10)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Paisaje))
 
 ;;---------------------------------------------------------------------
@@ -357,7 +359,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Retrato de una niña")
 	(Relevancia 4)
-	(Sala "D")
+	(Sala 4)
 	(Tematica RetratoPersonas))
 
 
@@ -373,7 +375,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Autorretrato")
 	(Relevancia 9)
-	(Sala "D")
+	(Sala 4)
 	(Tematica RetratoPersonas))
 
 ([Felipe+de+Borbon+y+Farnesio,+futuro+duque+de+Parma] of Personas
@@ -388,7 +390,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Felipe de Borbon y Farnesio,futuro duque de Parma")
 	(Relevancia 2)
-	(Sala "D")
+	(Sala 4)
 	(Tematica RetratoPersonas))
 
 ([Carlos+III,+ninyo] of Personas
@@ -403,7 +405,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Autorretrato")
 	(Relevancia 3)
-	(Sala "D")
+	(Sala 4)
 	(Tematica RetratoPersonas))
 
 ([Cleopatra] of Personas
@@ -418,7 +420,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Cleopatra")
 	(Relevancia 6)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoPersonas))
 
 ([Retrato+ecuestre+del+duque+de+Lerma] of Personas
@@ -433,7 +435,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Retrato ecuestre del duque de Lerma")
 	(Relevancia 9)
-	(Sala "B")
+	(Sala 2)
 	(Tematica RetratoPersonas))
 
 ([Autorretrato2] of Personas
@@ -448,7 +450,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Autorretrato")
 	(Relevancia 7)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoPersonas))
 
 ([Felipe+II] of Personas
@@ -463,7 +465,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Felipe II")
 	(Relevancia 3)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoPersonas))
 
 ([Las+Meninas] of Personas
@@ -478,7 +480,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Las Meninas")
 	(Relevancia 10)
-	(Sala "A")
+	(Sala 1)
 	(Tematica RetratoPersonas))
 
 ([La+venerable+madre+Jeronima+de+la+Fuente] of Personas
@@ -493,7 +495,7 @@
 	(Mayor18 FALSE)
 	(Nombre "La venerable madre Jeronima de la Fuente")
 	(Relevancia 8)
-	(Sala "B")
+	(Sala 2)
 	(Tematica RetratoPersonas))
 
 ([Retrato+de+hombre] of Personas
@@ -508,7 +510,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Retrato de hombre")
 	(Relevancia 5)
-	(Sala "B")
+	(Sala 2)
 	(Tematica RetratoPersonas))
 
 
@@ -531,7 +533,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Florero de cristal")
 	(Relevancia 5)
-	(Sala "A")
+	(Sala 1)
 	(Tematica RetratoOtros))
 
 ([Bodegon+de+frutas] of  Otros
@@ -547,7 +549,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Bodegon de frutas")
 	(Relevancia 3)
-	(Sala "D")
+	(Sala 4)
 	(Tematica RetratoOtros))
 
 ([Caza+con+reclamo] of  Otros
@@ -563,7 +565,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Caza con reclamo")
 	(Relevancia 4)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoOtros))
 
 ([Perros+en+trailla] of  Otros
@@ -579,7 +581,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Caza con reclamo")
 	(Relevancia 4)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoOtros))
 
 ([Agnus+Dei] of  Otros
@@ -595,7 +597,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Agnus Dei")
 	(Relevancia 7)
-	(Sala "B")
+	(Sala 2)
 	(Tematica RetratoOtros)) 
 
 ([Bodegon+con+cacharros] of  Otros
@@ -611,7 +613,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Bodegon con cacharros")
 	(Relevancia 5)
-	(Sala "C")
+	(Sala 3)
 	(Tematica RetratoOtros))
 
 ;;---------------------------------------------------------------------
@@ -632,7 +634,7 @@
 	(Mayor18 FALSE)
 	(Nombre "La Inmaculada Concepcion")
 	(Relevancia 6)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Religioso))
 
 ([La+asuncion+de+la+Magdalena] of Religioso
@@ -647,7 +649,7 @@
 	(Mayor18 FALSE)
 	(Nombre "La asuncion de la Magdalena")
 	(Relevancia 10)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Religioso))
 
 ([El+jardin+de+las+delicias] of Religioso
@@ -662,7 +664,7 @@
 	(Mayor18 TRUE)
 	(Nombre "El jardin de las delicias")
 	(Relevancia 10)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Religioso))
 
 ([Triptico+de+la+Adoracion+de+los+Magos] of Religioso
@@ -677,7 +679,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Triptico de la Adoracion de los Magos")
 	(Relevancia 4)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([Mesa+de+los+Pecados+Capitales] of Religioso
@@ -692,7 +694,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Mesa de los Pecados Capitales")
 	(Relevancia 5)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 
@@ -709,7 +711,7 @@
 	(Mayor18 FALSE)
 	(Nombre "David vencedor de Goliath")
 	(Relevancia 8)
-	(Sala "E")
+	(Sala 5)
 	(Tematica Religioso))
 
 ([Adan] of  Religioso
@@ -725,7 +727,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Adan")
 	(Relevancia 8)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([Eva] of  Religioso
@@ -741,7 +743,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Eva")
 	(Relevancia 8)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([La+Crucifixion] of  Religioso
@@ -757,7 +759,7 @@
 	(Mayor18 FALSE)
 	(Nombre "La Crucifixion")
 	(Relevancia 10)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([La+huida+a+Egipto] of  Religioso
@@ -773,7 +775,7 @@
 	(Mayor18 FALSE)
 	(Nombre "La huida a Egipto")
 	(Relevancia 5)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Religioso))
 
 ([Cupido] of  Religioso
@@ -789,7 +791,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Cupido")
 	(Relevancia 7)
-	(Sala "B")
+	(Sala 2)
 	(Tematica Religioso))
 
 ([Virgen+de+la+silla] of  Religioso
@@ -805,7 +807,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Virgen de la silla")
 	(Relevancia 4)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([Las+Tres+Gracias] of  Religioso
@@ -821,7 +823,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Las Tres Gracias")
 	(Relevancia 9)
-	(Sala "A")
+	(Sala 1)
 	(Tematica Religioso))
 
 ([El+juicio+de+Paris] of  Religioso
@@ -837,7 +839,7 @@
 	(Mayor18 FALSE)
 	(Nombre "El juicio de Paris")
 	(Relevancia 9)
-	(Sala "C")
+	(Sala 3)
 	(Tematica Religioso))
 
 ([Ticio] of  Religioso
@@ -853,7 +855,7 @@
 	(Mayor18 TRUE)
 	(Nombre "Ticio")
 	(Relevancia 10)
-	(Sala "D")
+	(Sala 4)
 	(Tematica Religioso))
 
 ([Salome] of  Religioso
@@ -869,7 +871,7 @@
 	(Mayor18 FALSE)
 	(Nombre "Salome")
 	(Relevancia 9)
-	(Sala "C")
+	(Sala 3)
 	(Tematica Religioso))
 
 ;;---------------------------------------------------------------------
@@ -890,7 +892,7 @@
 	(Muerte FALSE)
 	(Nombre "El 3 de Mayo de 1808")
 	(Relevancia 7)
-	(Sala "R")
+	(Sala 1)
 	(Tematica Belico)	
 	(Violento FALSE))
 
@@ -1037,6 +1039,16 @@
      (slot ObraDeArte)
      (slot prioridad))
 
+;;---------------------------------------------------------
+;;
+;; Template para las SALAS:
+;;
+;;---------------------------------------------------------
+
+(deftemplate recomendacionSalas
+     (slot ObraDeArte)
+     (slot sala))
+
 
 
 ;;---------------------------------------------------------
@@ -1063,6 +1075,7 @@
 ;;---------------------------------------------------------
 
 (defglobal ?*tiempoDisponible* = 1)
+
 
 ;;---------------------------------------------------------
 ;;
@@ -1272,13 +1285,13 @@
     (ask-question "¿Cuantos sois?%n  1 - Vengo solo%n  2 - Somos una familia%n  3 - Somos un grupo de menos de 15 personas%n  4 - Somos un grupo de más de 15 personas"
                   1 2 3 4))
   (if (eq ?response 1) 
-    then (bind ?*tiempoDisponible* (* 1.2 ?*tiempoDisponible*)))
+    then (bind ?*tiempoDisponible* (/ 1 ?*tiempoDisponible*)))
   (if (eq ?response 2) 
-    then (bind ?*tiempoDisponible* (* 1.3 ?*tiempoDisponible*)))
+    then (bind ?*tiempoDisponible* (/ 1.2 ?*tiempoDisponible*)))
   (if (eq ?response 3) 
-    then (bind ?*tiempoDisponible* (* 1.5 ?*tiempoDisponible*)))
+    then (bind ?*tiempoDisponible* (/ 1.5 ?*tiempoDisponible*)))
   (if (eq ?response 4) 
-    then (bind ?*tiempoDisponible* (* 1.7 ?*tiempoDisponible*))))
+    then (bind ?*tiempoDisponible* (/ 1.7 ?*tiempoDisponible*))))
 
 
 ;; Saltar al modulo menores
@@ -1333,7 +1346,7 @@
 (defrule pregunta-diasVisita "Pregunta cuantos dias visitaran"
   (declare (salience 10))
   =>
-  (bind ?diasVisita (pregunta-numerica "¿Cuantos dias visitaras el museo?" 1 7))
+  (bind ?diasVisita (pregunta-numerica "¿Cuantos dias visitaras el museo?" 1 2))
   (bind ?*tiempoDisponible* (* ?diasVisita ?*tiempoDisponible*)))
   
 ;; Saltar al modulo tipo contenido
@@ -1362,9 +1375,9 @@
     (ask-question "¿Duracion visita?%n  1 - Mañana/Tarde%n  2 - Todo el día"
                   1 2))
   (if (eq ?response 1) 
-    then (bind ?*tiempoDisponible* (* 4 ?*tiempoDisponible*)))
+    then (bind ?*tiempoDisponible* (* 120 ?*tiempoDisponible*)))
   (if (eq ?response 2) 
-    then (bind ?*tiempoDisponible* (* 8 ?*tiempoDisponible*))))
+    then (bind ?*tiempoDisponible* (* 240 ?*tiempoDisponible*))))
   
 ;; Saltar al modulo tipo contenido
 ;;---------------------------------
@@ -1402,7 +1415,11 @@
   (if (eq ?response 2) 
     then (incrementa-prioridad-obras Autor [Greco] 100))
   (if (eq ?response 3) 
-    then (incrementa-prioridad-obras Autor [Durero] 100)))
+    then (incrementa-prioridad-obras Autor [Durero] 100))
+  (if (eq ?response 4) 
+    then (assert (TipoObra Retrato))
+    	 (incrementa-prioridad-obras Mayor18 TRUE 100)
+    	 (incrementa-prioridad-obras Mayor18 FALSE 100)))
   
 ;; Saltar al modulo tipo contenido
 ;;---------------------------------
@@ -1435,7 +1452,11 @@
   (if (eq ?response 2) 
     then (incrementa-prioridad-obras Epoca "Romanticismo" 100))
   (if (eq ?response 3) 
-    then (incrementa-prioridad-obras Epoca "Barroco" 100)))
+    then (incrementa-prioridad-obras Epoca "Barroco" 100))
+  (if (eq ?response 4) 
+    then (assert (TipoObra Retrato))
+    	 (incrementa-prioridad-obras Mayor18 TRUE 100)
+    	 (incrementa-prioridad-obras Mayor18 FALSE 100)))
   
 ;; Saltar al modulo tipo contenido
 ;;---------------------------------
@@ -1469,13 +1490,16 @@
     (incrementa-prioridad-obras Complejidad 3 100)
     (incrementa-prioridad-obras Complejidad 4 100)
     (incrementa-prioridad-obras Complejidad 5 100))
-  (if (or (or (or (or (eq ?response 6) (eq ?response 7)) (eq ?response 8)) (eq ?response 9)) (eq ?response 10) )
+  (if (or (eq ?response 6) (eq ?response 7)) 
     then (incrementa-prioridad-obras Complejidad 6 100)
     (incrementa-prioridad-obras Complejidad 7 100)	
     (incrementa-prioridad-obras Complejidad 8 100)
     (incrementa-prioridad-obras Complejidad 9 100)
     (incrementa-prioridad-obras Complejidad 10 100))
-	(bind ?*tiempoMirandoObra* (+ ?response ?*tiempoMirandoObra*)))  
+  (if (eq ?response 8) 
+    then (assert (TipoObra Retrato))
+    	 (incrementa-prioridad-obras Mayor18 TRUE 100)
+    	 (incrementa-prioridad-obras Mayor18 FALSE 100)))
   
 ;; Saltar al modulo tipo contenido
 ;;---------------------------------
@@ -1483,12 +1507,6 @@
   (declare (salience 0))
   =>
   (focus determina-frecuenciaVisita))
-
-; ¿Visitas normalmente museos o galerías?
-; Muy pocas veces
-; A veces
-; Frecuentemente
-; Muy frecuentemente
 
 ;;-------------------------------------------------------
 ;;
@@ -1508,7 +1526,7 @@
   (bind ?response
     (ask-question "¿Visitas normalmente museos o galerías?%n  1 - Muy pocas veces%n  2 - A veces%n  3 - Frecuentemente%n  4 - Muy frecuentemente"
                   1 2 3 4))
-  (bind ?*tiempoMirandoObra* (+ (* ?response 2) ?*tiempoMirandoObra*)))
+  (assert (ConocimientoDeArte ?response)))
 	
 ;; Saltar al modulo tipo contenido
 ;;---------------------------------
@@ -1532,38 +1550,30 @@
 ;; Determinar la temática preferida del usuario
 ;;---------------------------------------------
 (defrule pregunta-tematica "¿Que tipo de obras prefieres ver?"
-  (declare (salience 10))
+  (declare (salience 1))
   =>
   (bind ?response
     (ask-question "¿Que tipo de obras prefieres ver?%n  1 - Retrato%n  2 - Belico%n  3 - Religioso%n  4 - Ninguno en especial"
                   1 2 3 4))
   (if (eq ?response 1) 
-    then (assert (TipoObra Retrato))
+    then 
     	 (incrementa-prioridad-obras Tematica RetratoOtros 100)
-    	 (incrementa-prioridad-obras Tematica RetratoPersonas 100))
+    	 (incrementa-prioridad-obras Tematica RetratoPersonas 100)
+    	 (focus determina-tipoRetrato))
   (if (eq ?response 2) 
-	then (assert (TipoObra Belico))
-    	 (incrementa-prioridad-obras Tematica Belico 100))
+	then 
+    	 (incrementa-prioridad-obras Tematica Belico 100)
+    	 (focus determina-tipoBelico))
   (if (eq ?response 3) 
-  	then (assert (TipoObra Religioso))
-    	 (incrementa-prioridad-obras Complejidad 7 100)))
+  	then 
+    	 (incrementa-prioridad-obras Tematica Religioso 100)
+    	 (focus determina-tipoReligioso))
+  (if (eq ?response 4) 
+    then 
+    	 (incrementa-prioridad-obras Mayor18 TRUE 100)
+    	 (incrementa-prioridad-obras Mayor18 FALSE 100)
+    	 (focus imprime-recomendaciones)))
 
-
-;; 
-;;----------------------
-(defrule fin-determina-tematica "Fin pregunta eleccion tematica"
-  (declare (salience 0))
-  (TipoObra ?Tipo)
-  =>
-  (if (eq ?Tipo Retrato)
-  	then (focus determina-tipoRetrato))
-  (if (eq ?Tipo Belico)
-  	then (focus determina-tipoBelico))
-  (if (eq ?Tipo Religioso)
-  	then (focus determina-tipoReligioso))
-  (if (and (and (not (eq ?Tipo Retrato)) (not (eq ?Tipo Belico))) (not (eq ?Tipo Religioso)))
-  	then (assert (TipoObra SinTematica))
-		 (focus imprime-recomendaciones)))
 
 
 ;;-----------------------------------------------------------------------------------------------------------------------
@@ -1747,13 +1757,14 @@
   (import determina-tematica ?ALL)
   (export ?ALL))
 
- ;; arranca estableciendo el hecho print-sorted
- ;;--------------------------------------------
+;; arranca estableciendo el hecho print-sorted
+;;--------------------------------------------
  (defrule print
    (declare (salience 10))
    =>
    (printout t crlf "Obras recomendadas" crlf "-------------------" crlf)
    (assert (print-sorted)))
+
 
  ;;---------------------------------------------------------
 
@@ -1761,10 +1772,13 @@
    (declare (salience 10))
    (print-sorted)
    (tematica (nombre ?n))
-   (recomendacion (ObraDeArte ?l))
+   (menor ?esMenor)
+   (recomendacion (ObraDeArte ?obra))
    =>
-   
-   (assert (unprinted ?l)))
+   (if (or (or (eq ?esMenor no) 
+          (eq (send ?obra get-Mayor18) FALSE))  (eq (send ?obra get-Mayor18) FALSE))
+    then (assert (unprinted ?obra))))
+
 
 
  ;; elimina el hecho print-sorted para iniciar la salida
@@ -1775,73 +1789,49 @@
    =>
    (retract ?f))
 
- ;;-----------------------------------------
- (defrule print-greatest "Prints the unprinted item with the greatest rating."
-   (declare (salience 0))
-   (not (print-sorted))
-   ?u <- (unprinted ?obra)
-   (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
-   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))   
-   =>
-   (retract ?u)                                                                                  
-                                                 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) " con prioridad: " ?prioridad  crlf)
-   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))                       
-
-
-
-
-
-;-------------------------------
-;;
-;; Tipo Retrato Personas
-;;
-;;------------------------------
-
-(defmodule imprime-recomendaciones-tipoRetrato-personas "Obras a visitar"
-  (import determina-retratoPersonas ?ALL)
-  (export ?ALL))
-
- ;; arranca estableciendo el hecho print-sorted
- ;;--------------------------------------------
- (defrule print
-   (declare (salience 10))
-   =>
-   (printout t crlf "Obras recomendadas" crlf "-------------------" crlf)
-   (assert (print-sorted)))
-
- ;;---------------------------------------------------------
-
- (defrule assert-unprinted "Asserts each item that needs to be printed."
-   (declare (salience 10))
-   (print-sorted)
-   (tematica (nombre ?n))
-   (recomendacion (ObraDeArte ?l))
-   =>
-   
-   (assert (unprinted ?l)))
-
-
- ;; elimina el hecho print-sorted para iniciar la salida
- ;;-----------------------------------------------------
- (defrule retract-print-sorted "Retract print-sorted after all items enumerated."
-   (declare (salience 0))
-   ?f <- (print-sorted)
-   =>
-   (retract ?f))
 
  ;;-----------------------------------------
  (defrule print-greatest "Prints the unprinted item with the greatest rating."
    (declare (salience 0))
    (not (print-sorted))
    ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
    (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
-   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))   
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))  
    =>
    (retract ?u)                                                                                  
-                                                 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) " con prioridad: " ?prioridad  crlf)
-   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))                       
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+   (if (<= ?*tiempoMirandoObra* ?*tiempoDisponible*) 
+   		then 
+   		(if (eq (send ?obra get-Dimensiones)  Pequenyo)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 10) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Mediano)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 13) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Grande)
+			then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 15) ?*tiempoMirandoObra*)))
+	    
+	    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+	    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+	    (assert (recomendacion (ObraDeArte ?obra) (prioridad  ?prioridad)))
+	    ; (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala) " , con prioridad: " ?prioridad  crlf)
+	    ; (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*))
+	    ))
+
+ ;;-----------------------------------------
+ (defrule print-sala "Prints the unprinted item with the greatest rating."
+   (declare (salience 0))
+   ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
+   (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (>= (send ?l get-Sala) (send ?obra get-Sala))))                                            
+   =>
+   (retract ?u)                                                                                  
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+
+    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
 
 
 ;-------------------------------
@@ -1854,13 +1844,14 @@
   (import determina-retratoOtros ?ALL)
   (export ?ALL))
 
- ;; arranca estableciendo el hecho print-sorted
- ;;--------------------------------------------
+;; arranca estableciendo el hecho print-sorted
+;;--------------------------------------------
  (defrule print
    (declare (salience 10))
    =>
    (printout t crlf "Obras recomendadas" crlf "-------------------" crlf)
    (assert (print-sorted)))
+
 
  ;;---------------------------------------------------------
 
@@ -1868,10 +1859,13 @@
    (declare (salience 10))
    (print-sorted)
    (tematica (nombre ?n))
-   (recomendacion (ObraDeArte ?l))
+   (menor ?esMenor)
+   (recomendacion (ObraDeArte ?obra))
    =>
-   
-   (assert (unprinted ?l)))
+   (if (or (or (eq ?esMenor no) 
+          (eq (send ?obra get-Mayor18) FALSE))  (eq (send ?obra get-Mayor18) FALSE))
+    then (assert (unprinted ?obra))))
+
 
 
  ;; elimina el hecho print-sorted para iniciar la salida
@@ -1882,18 +1876,49 @@
    =>
    (retract ?f))
 
+
  ;;-----------------------------------------
  (defrule print-greatest "Prints the unprinted item with the greatest rating."
    (declare (salience 0))
    (not (print-sorted))
    ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
    (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
-   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))   
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))  
    =>
    (retract ?u)                                                                                  
-                                                 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) " con prioridad: " ?prioridad  crlf)
-   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))                       
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+   (if (<= ?*tiempoMirandoObra* ?*tiempoDisponible*) 
+   		then 
+   		(if (eq (send ?obra get-Dimensiones)  Pequenyo)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 10) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Mediano)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 13) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Grande)
+			then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 15) ?*tiempoMirandoObra*)))
+	    
+	    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+	    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+	    (assert (recomendacion (ObraDeArte ?obra) (prioridad  ?prioridad)))
+	    ; (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala) " , con prioridad: " ?prioridad  crlf)
+	    ; (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*))
+	    ))
+
+ ;;-----------------------------------------
+ (defrule print-sala "Prints the unprinted item with the greatest rating."
+   (declare (salience 0))
+   ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
+   (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (>= (send ?l get-Sala) (send ?obra get-Sala))))                                            
+   =>
+   (retract ?u)                                                                                  
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+
+    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
 
 ;-------------------------------
 ;;
@@ -1905,13 +1930,14 @@
   (import determina-tipoBelico ?ALL)
   (export ?ALL))
 
- ;; arranca estableciendo el hecho print-sorted
- ;;--------------------------------------------
+;; arranca estableciendo el hecho print-sorted
+;;--------------------------------------------
  (defrule print
    (declare (salience 10))
    =>
    (printout t crlf "Obras recomendadas" crlf "-------------------" crlf)
    (assert (print-sorted)))
+
 
  ;;---------------------------------------------------------
 
@@ -1919,10 +1945,13 @@
    (declare (salience 10))
    (print-sorted)
    (tematica (nombre ?n))
-   (recomendacion (ObraDeArte ?l))
+   (menor ?esMenor)
+   (recomendacion (ObraDeArte ?obra))
    =>
-   
-   (assert (unprinted ?l)))
+   (if (or (or (eq ?esMenor no) 
+          (eq (send ?obra get-Mayor18) FALSE))  (eq (send ?obra get-Mayor18) FALSE))
+    then (assert (unprinted ?obra))))
+
 
 
  ;; elimina el hecho print-sorted para iniciar la salida
@@ -1933,18 +1962,50 @@
    =>
    (retract ?f))
 
+
  ;;-----------------------------------------
  (defrule print-greatest "Prints the unprinted item with the greatest rating."
    (declare (salience 0))
    (not (print-sorted))
    ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
    (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
-   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))   
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))  
    =>
    (retract ?u)                                                                                  
-                                                 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) " con prioridad: " ?prioridad  crlf)
-   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))                       
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+   (if (<= ?*tiempoMirandoObra* ?*tiempoDisponible*) 
+   		then 
+   		(if (eq (send ?obra get-Dimensiones)  Pequenyo)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 10) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Mediano)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 13) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Grande)
+			then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 15) ?*tiempoMirandoObra*)))
+	    
+	    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+	    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+	    (assert (recomendacion (ObraDeArte ?obra) (prioridad  ?prioridad)))
+	    ; (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala) " , con prioridad: " ?prioridad  crlf)
+	    ; (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*))
+	    ))
+
+ ;;-----------------------------------------
+ (defrule print-sala "Prints the unprinted item with the greatest rating."
+   (declare (salience 0))
+   ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
+   (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (>= (send ?l get-Sala) (send ?obra get-Sala))))                                            
+   =>
+   (retract ?u)                                                                                  
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+
+    ; (printout t "Tiempo mirando obra: " ?*tiempoMirandoObra* crlf)
+    ; (printout t "Tiempo disponible: " ?*tiempoDisponible* crlf)
+    (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+    (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
+
 
 ;-------------------------------
 ;;
@@ -1956,13 +2017,14 @@
   (import determina-tipoReligioso ?ALL)
   (export ?ALL))
 
- ;; arranca estableciendo el hecho print-sorted
- ;;--------------------------------------------
+;; arranca estableciendo el hecho print-sorted
+;;--------------------------------------------
  (defrule print
    (declare (salience 10))
    =>
    (printout t crlf "Obras recomendadas" crlf "-------------------" crlf)
    (assert (print-sorted)))
+
 
  ;;---------------------------------------------------------
 
@@ -1970,10 +2032,13 @@
    (declare (salience 10))
    (print-sorted)
    (tematica (nombre ?n))
-   (recomendacion (ObraDeArte ?l))
+   (menor ?esMenor)
+   (recomendacion (ObraDeArte ?obra))
    =>
-   
-   (assert (unprinted ?l)))
+   (if (or (or (eq ?esMenor no) 
+          (eq (send ?obra get-Mayor18) FALSE))  (eq (send ?obra get-Mayor18) FALSE))
+    then (assert (unprinted ?obra))))
+
 
 
  ;; elimina el hecho print-sorted para iniciar la salida
@@ -1984,24 +2049,39 @@
    =>
    (retract ?f))
 
+
  ;;-----------------------------------------
  (defrule print-greatest "Prints the unprinted item with the greatest rating."
    (declare (salience 0))
    (not (print-sorted))
    ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
    (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
-   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))   
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (<= ?r ?prioridad)))  
    =>
    (retract ?u)                                                                                  
-                                                 
-   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) " con prioridad: " ?prioridad  crlf)
-   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))                       
+   ;tiempoMirandoObra = (Complejidad + Coneixement)/2 + tiempoTamanyoObra
+   (if (<= ?*tiempoMirandoObra* ?*tiempoDisponible*) 
+   		then 
+   		(if (eq (send ?obra get-Dimensiones)  Pequenyo)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 10) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Mediano)
+	   		then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 13) ?*tiempoMirandoObra*)))
+	    (if (eq (send ?obra get-Dimensiones)  Grande)
+			then (bind ?*tiempoMirandoObra* (+ (+ (/ (+ (send ?obra get-Complejidad) ?conocimientoDeArte) 2) 15) ?*tiempoMirandoObra*)))
+	    
+	    (assert (recomendacion (ObraDeArte ?obra) (prioridad  ?prioridad)))
+	    ))
 
+ ;;-----------------------------------------
+ (defrule print-sala "Prints the unprinted item with the greatest rating."
+   (declare (salience 0))
+   ?u <- (unprinted ?obra)
+   (ConocimientoDeArte ?conocimientoDeArte)	
+   (recomendacion (ObraDeArte ?obra) (prioridad ?prioridad))                                               
+   (forall (and (unprinted ?l) (recomendacion (ObraDeArte ?l) (prioridad ?r))) (test (>= (send ?l get-Sala) (send ?obra get-Sala))))                                            
+   =>
+   (retract ?u)                                                                                  
 
-
-
-
-
-
-
-
+   (printout t "#" (+ 1 ?*recomendacionesImprimidas*) " - " (send ?obra get-Nombre) ", de " (send ?obra get-Autor) ", con sala: " (send ?obra get-Sala)  crlf)
+   (bind ?*recomendacionesImprimidas* (+ 1 ?*recomendacionesImprimidas*)))
